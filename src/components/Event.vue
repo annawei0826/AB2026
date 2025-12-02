@@ -1,0 +1,464 @@
+<template>
+  <div class="sec event-section" id="sec5">
+    <div class="mid_content" data-aos="fade-up">
+      <div class="article_title_wrap">
+        <div class="article_title">
+          {{ infoData.title }}
+        </div>
+      </div>
+
+      <div class="centerBox">
+        <div class="event_btns">
+          <button 
+            v-for="(city, index) in cities" 
+            :key="index"
+            class="btn event_btn" 
+            :class="{ active: activeTab === index }"
+            @click="slideTo(index)"
+          >
+            <img src="@/assets/image/icon-map.png" alt="地點圖示" class="map-icon">
+            <span class="city-name">{{ city.name }}</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="event-carousel-container">
+        <button class="event-arrow event-arrow-left" @click="swiperPrev">
+          <img src="@/assets/image/arrow_left.png" alt="上一張">
+        </button>
+
+        <div class="event-carousel-wrapper">
+          <swiper
+            :modules="modules"
+            :slides-per-view="1"
+            :space-between="20"
+            :loop="true"
+            :speed="1200"
+            :effect="'slide'"
+            @swiper="onSwiper"
+            @slideChange="onSlideChange"
+            class="event-swiper"
+          >
+            <swiper-slide v-for="(venue, index) in sortedVenues" :key="index">
+              <div class="venue-content">
+
+                <div class="traffic_body">
+                  <div class="map_wrap">
+                    <div class="map-responsive">
+                      <iframe
+                        :src="venue.mapUrl"
+                        width="100%" 
+                        height="450" 
+                        style="border:0; border-radius: 10px; display: block;"
+                        allowfullscreen="" 
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                      ></iframe>
+                    </div>
+                  </div>
+
+                  <div class="centerBox">
+                    <div class="traffic_item_wrap">
+                      <div 
+                        v-for="(transport, tIndex) in venue.transportation" 
+                        :key="tIndex"
+                        class="traffic_item"
+                      >
+                        <div class="traffic_icon">
+                          <img :src="getImageUrl(transport.icon)" />
+                        </div>
+                        <div class="traffic_des">
+                          <p class="traffic_title">
+                            {{ transport.type }}
+                            <span v-if="transport.time" class="traffic_time">{{ transport.time }}</span>
+                          </p>
+                          <p class="traffic_txt" v-html="transport.description"></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </swiper-slide>
+          </swiper>
+        </div>
+
+        <button class="event-arrow event-arrow-right" @click="swiperNext">
+          <img src="@/assets/image/arrow_right.png" alt="下一張">
+        </button>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script setup>
+import { ref, computed } from 'vue';
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import { Navigation } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+
+const props = defineProps({
+  infoData: {
+    type: Object,
+    default: () => ({})
+  }
+});
+
+const modules = [Navigation];
+const swiperInstance = ref(null);
+const activeTab = ref(0);
+
+const cities = ref([
+  { name: '台中場', key: 'taichung' },
+  { name: '台北場', key: 'taipei' },
+  { name: '高雄場', key: 'kaohsiung' }
+]);
+
+const getImageUrl = (name) => {
+  return new URL(`../assets/image/${name}`, import.meta.url).href;
+};
+
+const sortedVenues = computed(() => {
+  if (!props.infoData.venues) return [];
+  const venues = props.infoData.venues;
+  
+  const taichung = venues.find(v => v.name.includes('台中')) || venues[1];
+  const taipei = venues.find(v => v.name.includes('台北')) || venues[0];
+  const kaohsiung = venues.find(v => v.name.includes('高雄')) || venues[2];
+  
+  return [taichung, taipei, kaohsiung].filter(Boolean);
+});
+
+const onSwiper = (swiper) => {
+  swiperInstance.value = swiper;
+};
+
+const onSlideChange = (swiper) => {
+  activeTab.value = swiper.realIndex;
+};
+
+const slideTo = (index) => {
+  swiperInstance.value?.slideToLoop(index);
+};
+
+const swiperPrev = () => {
+  swiperInstance.value?.slidePrev();
+};
+
+const swiperNext = () => {
+  swiperInstance.value?.slideNext();
+};
+</script>
+
+<style scoped>
+.event-section {
+  background-image: url('@/assets/image/bg-blue2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.event_btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.event_btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 32px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  opacity: 0.4;
+}
+
+.event_btn:hover {
+  opacity: 0.7;
+  transform: translateY(-2px);
+}
+
+.event_btn.active {
+  opacity: 1;
+}
+
+.map-icon {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.city-name {
+  font-size: 20px;
+  font-weight: 700;
+  color: #f4e697;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+
+.event-carousel-container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.event-carousel-wrapper {
+  flex: 1;
+  overflow: hidden;
+}
+
+.event-swiper {
+  width: 100%;
+}
+
+.event-arrow {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  z-index: 10;
+}
+
+.event-arrow:hover {
+  transform: scale(1.1);
+}
+
+.event-arrow img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.event-arrow-left {
+  order: -1;
+}
+
+.event-arrow-right {
+  order: 1;
+}
+
+.venue-content {
+  width: 100%;
+}
+
+.map_wrap {
+  border-radius: 10px !important;
+  overflow: hidden !important;
+  margin-bottom: 30px;
+}
+
+.map-responsive {
+  border-radius: 10px !important;
+  overflow: hidden !important;
+  position: relative;
+  width: 100%;
+}
+
+.map-responsive iframe {
+  border-radius: 10px !important;
+  display: block !important;
+  width: 100%;
+}
+
+.traffic_title {
+  color: #f2e391;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.traffic_time {
+  color: #fff;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.traffic_txt {
+  color: #fff;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+@media screen and (max-width: 1024px) {
+  .event-carousel-container {
+    max-width: 900px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .event_btns {
+    gap: 18px;
+    margin-bottom: 16px;
+  }
+
+  .event_btn {
+    padding: 14px 28px;
+  }
+
+  .map-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .city-name {
+    font-size: 19px;
+  }
+
+  .event-arrow {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .event-carousel-container {
+    gap: 15px;
+  }
+
+  .map-responsive iframe {
+    height: 400px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .event-carousel-container {
+    max-width: 100%;
+    padding: 15px 10px;
+  }
+
+  .map-responsive iframe {
+    height: 350px;
+  }
+
+  .traffic_title {
+    font-size: 18px;
+  }
+
+  .traffic_time {
+    font-size: 15px;
+  }
+
+  .traffic_txt {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .event_btns {
+    gap: 12px;
+  }
+
+  .event_btn {
+    padding: 10px 20px;
+  }
+
+  .map-icon {
+    width: 26px;
+    height: 26px;
+  }
+
+  .city-name {
+    font-size: 16px;
+  }
+
+  .event-carousel-container {
+    gap: 10px;
+  }
+
+  .event-arrow {
+    width: 36px;
+    height: 36px;
+  }
+
+  .map-responsive iframe {
+    height: 300px;
+  }
+
+  .traffic_title {
+    font-size: 17px;
+    flex-wrap: wrap;
+  }
+
+  .traffic_time {
+    font-size: 14px;
+  }
+
+  .traffic_txt {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .event_btns {
+    gap: 10px;
+    flex-direction: column;
+    width: 100%;
+    max-width: 280px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .event_btn {
+    width: 100%;
+    justify-content: center;
+    padding: 10px 16px;
+  }
+
+  .map-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .city-name {
+    font-size: 16px;
+  }
+
+  .event-carousel-container {
+    gap: 5px;
+  }
+
+  .event-arrow {
+    width: 30px;
+    height: 30px;
+  }
+
+  .map-responsive iframe {
+    height: 280px;
+  }
+
+  .traffic_title {
+    font-size: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .traffic_time {
+    font-size: 14px;
+  }
+
+  .traffic_txt {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}
+</style>

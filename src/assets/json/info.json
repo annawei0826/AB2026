@@ -1,0 +1,413 @@
+{
+    "menu": [
+        {
+            "name": "論壇介紹",
+            "link": "#sec1"
+        },
+        {
+            "name": "講者陣容",
+            "link": "#sec2"
+        },
+        {
+            "name": "活動議程",
+            "link": "#sec3"
+        },
+        {
+            "name": "立即報名",
+            "link": "#sec4"
+        },
+        {
+            "name": "交通資訊",
+            "link": "#sec5"
+        },
+        {
+            "name": "延伸閱讀",
+            "link": "#sec6"
+        }
+    ],
+    "content": [
+        {
+            "title": "論壇介紹",
+            "desc": "在全民瘋股、資金狂追指數型ETF的年代，被動機械式進出,將市場推向更劇烈的波動循環，讓投資更無所適從。此時，具備主動選債的主動式「非投等債」ETF站上市場聚光燈，成為下一波收益追尋者的焦點武器。<br><br>本論壇將集結國際債市權威、頂尖投信團隊與實戰型理財講者，從全球視角全面剖析：當 ETF 不再是唯一解，非投等債如何躍升為關鍵收益來源？從利率高檔盤旋下的債市新布局，到主動式策略如何穿越震盪、穩定提升收益，本論壇將帶您搶先卡位下一階段「主動投資」的收益投資風口。"
+        },
+        {
+            "title": "講者陣容"
+        },
+        {
+            "title": "活動議程",
+            "topics": [
+                {
+                    "title": "2026全球變局：洞悉新秩序下的機會與挑戰",
+                    "desc": "面對利率轉折、供應鏈重洗與地緣風險升溫，2026 年的全球市場正在形成一套全新的運作邏輯。資金流動、產業競爭與市場風險都在改寫，投資判斷不再能依循過去經驗。本場演講將帶將帶你洞悉全球新秩序的核心變化，掌握下一階段的結構性機會，並看見隱藏在變局中的真正挑戰。",
+                    "isOpen": false
+                },
+                {
+                    "title": "當利率轉向，誰能抓住非投等債的風口？",
+                    "desc": "在全球市場邁入新秩序、利率轉向成為關鍵變數之後，資金開始尋找能在震盪中維持節奏的下一個落腳處，兼具報酬潛力與收益契機的非投等債成為市場關注焦點。本場演講從利率路徑、信用週期與企業體質切入，帶你看懂為何非投等債成為 ETF 浪潮中，值得主動掌握的收益機會之一。",
+                    "isOpen": false
+                },
+                {
+                    "title": "主動債勢來襲：揭開非投資等級債ETF的收益新時代",
+                    "desc": "在全球市場重組與利率轉向的背景下，非投等債已成為最受關注的收益戰場。本場將進一步揭開非投資等級債 ETF 的全新樣貌——在利差重定價、企業體質分化加速的時刻，主動債策略如何與 ETF 工具結合，打造更具韌性的收益新模式？本場將帶你看見主動「債勢來襲」的真正意義。",
+                    "isOpen": false
+                },
+                {
+                    "title": "股債雙盈的秘密：當市場狂熱時，冷靜配置的人贏",
+                    "desc": "在全球新秩序、利率轉向與主動收益浪潮逐一揭開後，投資人最關心的問題其實是：在市場情緒高漲時，如何不被帶著跑？股債雙盈的關鍵，不在追漲，而在掌握節奏、冷靜配置。本場由股魚帶你看懂如何在狂熱行情中保持紀律，用更聰明的方式拿下股與債的穩健回報。",
+                    "isOpen": false
+                }
+            ],
+            "cities": [
+                {
+                    "titleImg": "agenda_remark_taichung.png",
+                    "eventInfo": {
+                        "date": "2026/01/06",
+                        "time": "(二) 14:00 - 16:25",
+                        "remark": "（13:00開放報到）",
+                        "venue": "台中李方艾美酒店",
+                        "room": "22F絢麗廳"
+                    },
+                    "schedule": [
+                        {
+                            "time": "13:00-14:00",
+                            "content": "來賓報到",
+                            "isOrange": false
+                        },
+                        {
+                            "time": "14:00-14:10",
+                            "content": "主持人開場<br><span>知名財經主持人 <b style=\"color: #b28922;\">阮慕驊</b></span>",
+                            "isOrange": false
+                        },
+                        {
+                            "time": "14:10-14:15",
+                            "content": "大合照",
+                            "isOrange": false
+                        },
+                        {
+                            "time": "14:15-14:35",
+                            "content": "專題演講一<br>2026全球變局：洞悉新秩序下的機會與挑戰<br><span>知名財金教授 <b style=\"color: #b28922;\">朱岳中</b></span>",
+                            "isOrange": false
+                        },
+                        {
+                            "time": "14:35-15:05",
+                            "content": "專題演講二<br>當利率轉向，誰能抓住非投等債的風口？<br><span>聯博集團固定收益共同主管暨信用投資總監<br><b style=\"color: #b28922;\">葛尚・狄斯坦費 GERSHON M. DISTENFELD</b></span>",
+                            "isOrange": true
+                        },
+                        {
+                            "time": "15:05-15:25",
+                            "content": "專題演講三<br>主動債勢來襲：揭開非投資等級債ETF的收益新時代<br><span>聯博投信ETF發展部副總經理<b style=\"color: #b28922;\"> 鍾郁婕</b></span>",
+                            "isOrange": true
+                        },
+                        {
+                            "time": "15:25-15:35",
+                            "content": "中場休息",
+                            "isOrange": true
+                        },
+                        {
+                            "time": "15:35-15:55",
+                            "content": "專題演講四<br>股債雙盈的秘密：當市場狂熱時，冷靜配置的人贏<br><span>理財達人 <b style=\"color: #b28922;\">股魚</b></span>",
+                            "isOrange": true
+                        },
+                        {
+                            "time": "15:55-16:25",
+                            "content": "焦點對談<br>贏在轉折：2026投資新常態<br><span>對談主持人暨主講者：<br>知名財經主持人 <b style=\"color: #b28922;\">阮慕驊</b><br>對談專家：<br>聯博投信固定收益資深投資策略師<b style=\"color: #b28922;\"> 江常維</b><br>群益金鼎證券 財富管理部執行副總裁 <b style=\"color: #b28922;\">洪欣如</b><br>理財達人 <b style=\"color: #b28922;\">股魚</b><br>聯博投信ETF發展部副總經理 <b style=\"color: #b28922;\">鍾郁婕</b></span>",
+                            "isOrange": true
+                        },
+                        {
+                            "time": "16:25",
+                            "content": "圓滿賦歸",
+                            "isOrange": false
+                        }
+                    ]
+                },
+                {
+                    "titleImg": "agenda_remark_taipei.png",
+                    "eventInfo": {
+                        "date": "2026/01/07",
+                        "time": "(三) 19:00 - 21:15",
+                        "remark": "（18:00開放報到）",
+                        "venue": "台北國際會議中心TICC",
+                        "room": "201會議室"
+                    },
+                    "schedule": [
+                        {
+                            "time": "18:00-19:00",
+                            "content": "來賓報到",
+                            "isOrange": false
+                        },
+                        {
+                            "time": "19:00-19:10",
+                            "content": "主持人開場<br><span>知名財經主持人 <b style=\"color: #b28922;\">阮慕驊</b></span>",
+                            "isOrange": false
+                        },
+                        {
+                            "time": "19:10-19:15",
+                            "content": "大合照",
+                            "isOrange": false
+                        },
+                        {
+                            "time": "19:15-19:35",
+                            "content": "專題演講一<br>2026全球變局：洞悉新秩序下的機會與挑戰<br><span>知名財金教授 <b style=\"color: #b28922;\">朱岳中</b></span>",
+                            "isOrange": false
+                        },
+                        {
+                            "time": "19:35-20:05",
+                            "content": "專題演講二<br>當利率轉向，誰能抓住非投等債的風口？<br><span>聯博集團固定收益共同主管暨信用投資總監<br><b style=\"color: #b28922;\">葛尚・狄斯坦費 GERSHON M. DISTENFELD</b></span>",
+                            "isOrange": true
+                        },
+                        {
+                            "time": "20:05-20:25",
+                            "content": "專題演講三<br>主動債勢來襲：揭開非投資等級債ETF的收益新時代<br><span>聯博投信ETF發展部副總經理 <b style=\"color: #b28922;\"> 鍾郁婕</b></span>",
+                            "isOrange": true
+                        },
+                        {
+                            "time": "20:25-20:45",
+                            "content": "專題演講四<br>股債雙盈的秘密：當市場狂熱時，冷靜配置的人贏<br><span>理財達人 <b style=\"color: #b28922;\">股魚</b></span>",
+                            "isOrange": true
+                        },
+                        {
+                            "time": "20:45-21:15",
+                            "content": "焦點對談<br>贏在轉折：2026投資新常態<br><span>對談主持人暨主講者：<br>知名財經主持人 <b style=\"color: #b28922;\">阮慕驊</b><br>對談專家：<br>聯博投信固定收益資深投資策略師<b style=\"color: #b28922;\"> 江常維</b><br>群益金鼎證券 財富管理部執行副總裁 <b style=\"color: #b28922;\">洪欣如</b><br>理財達人 <b style=\"color: #b28922;\">股魚</b><br>聯博投信ETF發展部副總經理 <b style=\"color: #b28922;\">鍾郁婕</b></span>",
+                            "isOrange": true
+                        },
+                        {
+                            "time": "21:15",
+                            "content": "圓滿賦歸",
+                            "isOrange": false
+                        }
+                    ]
+                },
+                {
+                    "titleImg": "agenda_remark_kaohsiung.png",
+                    "eventInfo": {
+                        "date": "2026/01/08",
+                        "time": "(二) 14:00 - 16:25",
+                        "remark": "（13:00開放報到）",
+                        "venue": "高雄承億酒店萊特薇庭",
+                        "room": "11F 晨星廳"
+                    },
+                    "schedule": [
+                        {
+                            "time": "13:00-14:00",
+                            "content": "來賓報到",
+                            "isOrange": false
+                        },
+                        {
+                            "time": "14:00-14:10",
+                            "content": "主持人開場<br><span>知名財經主持人 <b style=\"color: #b28922;\">阮慕驊</b></span>",
+                            "isOrange": false
+                        },
+                        {
+                            "time": "14:10-14:15",
+                            "content": "大合照",
+                            "isOrange": false
+                        },
+                        {
+                            "time": "14:15-14:35",
+                            "content": "專題演講一<br>2026全球變局：洞悉新秩序下的機會與挑戰<br><span>知名財金教授 <b style=\"color: #b28922;\">朱岳中</b></span>",
+                            "isOrange": false
+                        },
+                        {
+                            "time": "14:35-15:05",
+                            "content": "專題演講二<br>當利率轉向，誰能抓住非投等債的風口？<br><span>聯博集團固定收益共同主管暨信用投資總監<br><b style=\"color: #b28922;\">葛尚・狄斯坦費 GERSHON M. DISTENFELD</b></span>",
+                            "isOrange": true
+                        },
+                        {
+                            "time": "15:05-15:25",
+                            "content": "專題演講三<br>主動債勢來襲：揭開非投資等級債ETF的收益新時代<br><span>聯博投信ETF發展部副總經理<b style=\"color: #b28922;\"> 鍾郁婕</b></span>",
+                            "isOrange": true
+                        },
+                        {
+                            "time": "15:25-15:35",
+                            "content": "中場休息",
+                            "isOrange": true
+                        },
+                        {
+                            "time": "15:35-15:55",
+                            "content": "專題演講四<br>股債雙盈的秘密：當市場狂熱時，冷靜配置的人贏<br><span>理財達人 <b style=\"color: #b28922;\">股魚</b></span>",
+                            "isOrange": true
+                        },
+                        {
+                            "time": "15:55-16:25",
+                            "content": "焦點對談<br>贏在轉折：2026投資新常態<br><span>對談主持人暨主講者：<br>知名財經主持人 <b style=\"color: #b28922;\">阮慕驊</b><br>對談專家：<br>聯博投信固定收益資深投資策略師<b style=\"color: #b28922;\"> 江常維</b><br>群益金鼎證券 財富管理部執行副總裁 <b style=\"color: #b28922;\">洪欣如</b><br>理財達人 <b style=\"color: #b28922;\">股魚</b><br>聯博投信ETF發展部副總經理 <b style=\"color: #b28922;\">鍾郁婕</b></span>",
+                            "isOrange": true
+                        },
+                        {
+                            "time": "16:25",
+                            "content": "圓滿賦歸",
+                            "isOrange": false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "立即報名"
+        },
+        {
+            "title": "交通資訊",
+            "venues": [
+                {
+                    "name": "台中李方艾美酒店",
+                    "address": "台中市中區建國路126號",
+                    "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3640.998119562081!2d120.68078167617514!3d24.13670417840883!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693d36f10ace5f%3A0x6ab3fd4d4bbdae85!2z5Y-w5Lit5p2O5pa56Im-576O6YWS5bqX!5e0!3m2!1szh-TW!2stw!4v1750238143109!5m2!1szh-TW!2stw",
+                    "transportation": [
+                        {
+                            "type": "地點 : 台中李方艾美酒店22F絢麗廳 ",
+                            "icon": "icon-map.png"
+                        },
+                        {
+                            "type": "時間 : 01/06",
+                            "icon": "icon-time.png",
+                            "time": "(二) 14:00 - 16:25"
+                        },
+                        {
+                            "type": "高鐵轉乘",
+                            "icon": "icon-HSR.png",
+                            "description": "距離酒店約：8.1公里,開車約15分鐘<br>1. 轉乘火車：抵達台中高鐵站→ 出口 3 台鐵車站→抵達台鐵新烏日站→北上方向(第二月台)→抵達台中火車站→ 5.6 出口 台灣大道(舊站)、建國路→出站後沿建國路步行350公尺(約5分鐘)至左前方的圓弧玻璃帷幕大樓→抵達台中李方艾美酒店<br>2. 轉乘公車：抵達台中高鐵站→ 出口 5.6 客運轉運站→搭乘 158號 或 37號→於台中車站(台灣大道)下車→下車後後沿建國路步行350公尺(約5分鐘)→抵達台中李方艾美酒店"
+                        },
+                        {
+                            "type": "火車",
+                            "icon": "icon-tram.png",
+                            "description": "距離酒店約：0.4公里,步行約5分鐘<br>抵達台中火車站→ 5.6 出口 台灣大道(舊站)、建國路→出站後沿建國路步行350公尺(約5分鐘)至左前方的圓弧玻璃帷幕大樓→抵達台中李方艾美酒店"
+                        }
+                    ]
+                },
+                {
+                    "name": "台北國際會議中心(TICC)",
+                    "address": "台北市信義路五段1號",
+                    "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.0165585592185!2d121.5560203871211!3d25.033512120618862!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442abb61ab3d33f%3A0xab0d0f7ac395bff4!2z5Y-w5YyX5ZyL6Zqb5pyD6K2w5Lit5b-DKFRJQ0Mp!5e0!3m2!1szh-TW!2stw!4v1749436260748!5m2!1szh-TW!2stw",
+                    "transportation": [
+                        {
+                            "type": "地點 : 台北國際會議中心TICC 201會議室",
+                            "icon": "icon-map.png"
+                        },
+                        {
+                            "type": "時間 : 01/07",
+                            "icon": "icon-time.png",
+                            "time": "(三) 19:00 - 21:15"
+                        },
+                        {
+                            "type": "自行開車",
+                            "icon": "icon-car.png",
+                            "description": "國際會議中心地址：台北市信義路五段1號<br>台北車站出發<br>走台北市東西向快速道路/市民大道/市民大道高架道路→前往大安區→光復南路出口下交流道→行駛光復南路→開往信義區基隆路一段→走市府路開往信義路五段→停車"
+                        },
+                        {
+                            "type": "捷運",
+                            "icon": "icon-tram.png",
+                            "description": "淡水信義線台北101/世貿站 1號出口,步行約1分鐘即可抵達"
+                        },
+                        {
+                            "type": "公車",
+                            "icon": "icon-bus.png",
+                            "description": "20、37、284、284直、611、650、935、1032、1503、1551、1552、2025、9001、9009、南軟通勤雙和線、20、22、33、226、承德幹線、288、288區、292、797、1503、信義幹線、28、281、537、647、915、棕6、棕7、棕18、棕21、綠1、207、797、信義幹線、信義新幹線、藍5、藍5區"
+                        }
+                    ]
+                },
+                {
+                    "name": "高雄承億酒店萊特薇庭",
+                    "address": "高雄市前鎮區林森四路189號",
+                    "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3683.192647709268!2d120.29971927458729!3d22.60928013162636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e03437685d40f%3A0xe80f343bc21874d8!2z6JCK54m56JaH5bqtIOmrmOmbhOmkqCBMaWdodCBXZWRkaW5nIEthb2hzaXVuZw!5e0!3m2!1szh-TW!2stw!4v1764658983008!5m2!1szh-TW!2stw",
+                    "transportation": [
+                        {
+                            "type": "地點 : 高雄承億酒店萊特薇庭11F 晨星廳 ",
+                            "icon": "icon-map.png"
+                        },
+                        {
+                            "type": "時間 : 01/08",
+                            "icon": "icon-time.png",
+                            "time": "(四) 14:00 - 16:25"
+                        },
+                        {
+                            "type": "自行開車",
+                            "icon": "icon-car.png",
+                            "description": "高雄承億酒店萊特薇庭地址：高雄市前鎮區林森四路189號<br>國道一號於高雄端出口下中正交流道 → 直走右轉三多一路(車程約15分鐘) → 左轉中華路 → 右轉林森四路 → 右側即抵達"
+                        },
+                        {
+                            "type": "大眾運輸 (由台鐵／高鐵／機場轉乘)",
+                            "icon": "icon-bus.png",
+                            "description": "1. 捷運(推薦)：轉乘高雄捷運 →「R8三多商圈站」由②號出口出站 → 沿中山二路步行至林森四路右轉 → 沿林森四路步行400公尺(約10分鐘) → 右側即抵達<br>2. 輕軌：轉乘高雄捷運 →「R13凹子底站」由①號出口出站 → 轉乘高雄輕軌「C24愛河之心站」→「C08高雄展覽館站」出站 → 沿成功二路步行至林森四路左轉 → 沿林森四路步行250公尺(總步行約8分鐘) → 左側即抵達"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "延伸閱讀",
+            "articles": [
+                {
+                    "title": "台灣資本市場里程碑：主動式ETF掛牌，投資人布局關鍵指引",
+                    "desc": "台灣資本市場新時代來臨！台股是全球今年表現最突出的市場之一，值此同時，台灣正式開放主動式ETF掛牌，這種投資工具有什麼特點？為何被主管機關如此重視，甚至認為是重要政策之舉？今周刊於6月11日舉辦2025年「主動式ETF崛起-兆元級新契機」論壇，邀集金管會、證交所、櫃買中心和眾多資產管理業者開講，吸引滿場聽眾參加。",
+                    "link": "https://www.businesstoday.com.tw/article/category/183013/post/202506130006/?utm_source=businesstoday&utm_medium=search&utm_campaign=article",
+                    "img": "article1.png"
+                },
+                {
+                    "title": "主動式ETF崛起創出「兆元級」契機！彭金隆：全球複合成長率逾40%，兩大優勢滿足投資人風險偏好",
+                    "desc": "「只要我們想，只要我們開始做，就會有成果！」儘管美國總統川普提出對等關稅議題，震撼全球金融市場，台股仍然在其中表現突出，為亞洲資本市場的佼佼者。",
+                    "link": "https://www.businesstoday.com.tw/article/category/183013/post/202506120035/?utm_source=businesstoday&utm_medium=search&utm_campaign=article",
+                    "img": "article2.png"
+                },
+                {
+                    "title": "主動式ETF來了！比傳統ETF更猛，管理費比你熟悉的基金更便宜，中小型股恐震盪加劇...效應全解讀",
+                    "desc": "「我們很努力地研究、選股、盯盤操作，好不容易才讓基金績效『打敗大盤』，但拿到手的獎金，卻比『複製大盤』的經理人還少……。」一位台股基金經理人愈說愈急。",
+                    "link": "https://www.businesstoday.com.tw/article/category/183012/post/202502190017/?utm_source=businesstoday&utm_medium=search&utm_campaign=article",
+                    "img": "article3.png"
+                },
+                {
+                    "title": "比傳統ETF更猛，管理費比你熟悉的基金更便宜，美國投資人瘋搶的理財新工具… 大標：主動式ETF來了！",
+                    "desc": "主動式基金經理人正在摩拳擦掌，要與被動式ETF一較高下，外商投信公司正在集結資源，要在國內基金市場重返榮耀",
+                    "link": "https://www.businesstoday.com.tw/article/category/183013/post/202502190003/?utm_source=businesstoday&utm_medium=search&utm_campaign=article",
+                    "img": "article4.png"
+                },
+                {
+                    "title": "主動式ETF像短跑選手，真能打敗大盤？ 專家解析2大迷思、3大族群最適合投資",
+                    "desc": "今年五月台灣市場開放主動式ETF掛牌，短短數月主動式ETF成交量迅速攀升至ETF前十名，成為投資人熱議焦點。這些由專業經理人操盤，號稱能「打敗大盤」的金融產品究竟潛力為何？面對琳瑯滿目主動式ETF，該如何選擇？投資達人股海老牛在《毛利小姐變有錢》節目中，破解市場上常討論到「能否打敗大盤」、「不就是基金」的迷思，同時建議三大族群合適建置主動式ETF資產配置。",
+                    "link": "https://www.businesstoday.com.tw/article/category/80403/post/202510170028/?utm_source=businesstoday&utm_medium=search&utm_campaign=article",
+                    "img": "article5.png"
+                },
+                {
+                    "title": "00980D月配息公告出爐！10月20日最後上車日",
+                    "desc": "全台首檔主動式債券ETF 00980D聯博投資等級債入息主動式ETF (本基金有一定比重得投資於非投資等級之高風險債券，配息來源可能為收益平準金且並無保證收益及配息)公告首次配息資訊。00980D配息金額為每受益權單位預估配發0.114元¹，投資人可以把握10月20日之本次最後申購日，即可參與首次配息。10月21日為除息日，配息發放日則訂於11月13日。",
+                    "link": "https://www.businesstoday.com.tw/article/category/183012/post/202510010069/?utm_source=businesstoday&utm_medium=search&utm_campaign=article",
+                    "img": "article6.png"
+                },
+                {
+                    "title": "解碼2025「穩中求勝」投資黃金契機　主動式債券ETF助攻",
+                    "desc": "面對地緣政治風險、通膨頑強與匯率劇烈波動，2025年的投資市場猶如站在轉折十字路口，自川普上任後的政經動盪，到聯準會在高利率壓力下維持觀望態度，資本市場充滿變數，聯博投信董事長翁振國在接受《今周刊》董事長謝金河專訪時強調：「今年最大的確定，就是不確定性。」在不穩定的環境中，唯有持盈保泰、穩中求勝才是最佳投資策略，主動式投資等級債ETF可望成為協助投資人達陣的利器。",
+                    "link": "https://www.businesstoday.com.tw/article/category/183012/post/202508110037/?utm_source=businesstoday&utm_medium=search&utm_campaign=article",
+                    "img": "article7.png"
+                },
+                {
+                    "title": "主動出擊搶佔風口 聯博主動式債券ETF三大優勢　掀起新世代資產配置革命",
+                    "desc": "台灣首檔主動式債券ETF-00980D於今年八月四日正式掛牌上櫃，代表歷經十七年，台灣終於與國際接軌，也象徵主動投資的重要里程碑。聯博投信董事長翁振國指出，主動式ETF有機會解決過去被動產品的投資市場交易時差、調整較為僵化及選債被動三大痛點。聯博投資等級債入息主動式ETF(本基金有一定比重得投資於非投資等級之高風險債券，配息來源可能為收益平準金且並無保證收益及配息)投資布局零時差1與國際同步，適度匯率避險2與配息機制3，可望成為新一代資產配置的新選擇。",
+                    "link": "https://www.businesstoday.com.tw/article/category/183012/post/202508080004/?utm_source=businesstoday&utm_medium=search&utm_campaign=article",
+                    "img": "article8.png"
+                },
+                {
+                    "title": "台灣首檔投等債主動式ETF! 聯博00980D打造債券投資新選擇",
+                    "desc": "台灣主動債券基金公司龍頭¹ 聯博投信宣布跨足台灣主動式ETF市場，推出全台首檔投資等級債主動式ETF。",
+                    "link": "https://www.businesstoday.com.tw/article/category/183013/post/202506300011/?utm_source=businesstoday&utm_medium=search&utm_campaign=article",
+                    "img": "article9.png"
+                }
+            ]
+        }
+    ],
+    "footer": {
+        "organizer": {
+            "title": "主辦單位:",
+            "logo": "logo.png"
+        },
+        "sponsor": {
+            "title": "協辦單位:",
+            "logo": "logo2.png"
+        },
+        "service": {
+            "phone": "服務電話 (02)2581-6196 #636",
+            "hours": "服務時間 週一至五 09:00~17:30 例假日除外"
+        },
+        "copyright": [
+            "今周文化事業(股)公司 / 今周行銷(股)公司 / 今周出版(股)公司 版權所有 本網站圖文非經本社同意不得刊載",
+            "Copyright © 2025 Business Today All rights reserved."
+        ]
+    }
+}
