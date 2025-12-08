@@ -325,12 +325,18 @@ const sign_up = async () => {
 </script>
 
 <style scoped>
+
+* {
+  box-sizing: border-box;
+}
+
 .signup-section {
   background-image: url('@/assets/image/bg-blue2.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+
 }
 
 .article_title_wrap {
@@ -350,6 +356,105 @@ const sign_up = async () => {
   clear: both;
   position: relative;
   z-index: 2;
+}
+
+.single_line,
+select {
+  width: 100%;
+  height: 44px;
+  min-height: 44px;
+  
+  padding: 10px 14px;
+  margin: 0;
+  
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 400;
+  color: #333333;
+  line-height: 1.5;
+  
+  border: 1px solid #d0d0d0;
+  border-radius: 8px;
+  
+  background-color: #ffffff;
+  
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  
+  box-sizing: border-box;
+  transition: border-color 0.2s ease;
+  
+  display: flex;
+  align-items: center;
+}
+
+.single_line::placeholder {
+  color: #999999;
+  font-size: 15px;
+  font-weight: 400;
+  opacity: 1;
+}
+
+.single_line::-webkit-input-placeholder {
+  color: #999999;
+  font-size: 15px;
+}
+
+.single_line::-moz-placeholder {
+  color: #999999;
+  font-size: 15px;
+}
+
+.single_line:-ms-input-placeholder {
+  color: #999999;
+  font-size: 15px;
+}
+
+select {
+  cursor: pointer;
+  padding-right: 40px;
+  
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23666666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 16px;
+}
+
+select option[value=""] {
+  color: #999999;
+}
+
+select[value=""] {
+  color: #999999;
+}
+
+select:not([value=""]) {
+  color: #333333;
+}
+
+select option {
+  color: #333333;
+  padding: 8px;
+}
+
+.single_line:focus,
+select:focus {
+  border-color: #0066cc;
+  outline: none;
+}
+
+.single_line:hover,
+select:hover {
+  border-color: #0066cc;
+}
+.single_line:disabled,
+select:disabled {
+  background-color: #f5f5f5;
+  color: #999999;
+  cursor: not-allowed;
+  opacity: 0.6;
 }
 
 .form_item_source {
@@ -415,7 +520,6 @@ const sign_up = async () => {
   line-height: 1.5;
 }
 
-/* 圖片按鈕樣式 */
 .submit-image-btn {
   display: inline-block;
   width: 190px;
@@ -445,9 +549,33 @@ const sign_up = async () => {
 }
 
 @media screen and (max-width: 768px) {
+  .signup-section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
   .form_container {
     padding: 30px 20px;
     border-radius: 16px;
+  }
+
+  .single_line,
+  select {
+    height: 42px;
+    min-height: 42px;
+    font-size: 14px;
+    padding: 9px 12px;
+  }
+
+  .single_line::placeholder,
+  .single_line::-webkit-input-placeholder,
+  .single_line::-moz-placeholder {
+    font-size: 14px;
+  }
+
+  select {
+    padding-right: 36px;
+    background-size: 14px;
   }
   
   .form_item_source {
@@ -480,14 +608,46 @@ const sign_up = async () => {
 }
 
 @media screen and (max-width: 480px) {
+
+
   .form_container {
     padding: 20px 15px;
     border-radius: 12px;
   }
+
+  .single_line,
+  select {
+    height: 40px;
+    min-height: 40px;
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  .single_line::placeholder,
+  .single_line::-webkit-input-placeholder,
+  .single_line::-moz-placeholder {
+    font-size: 14px;
+  }
+
+  select {
+    padding-right: 34px;
+    background-size: 13px;
+  }
   
   .submit-image-btn {
     width: 130px;
-    height: 42px;
+  }
+}
+
+
+@supports (-webkit-touch-callout: none) {
+  .single_line,
+  select {
+    -webkit-appearance: none;
+  }
+  
+  select {
+    background-position: right 14px center;
   }
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div class="sec event-section" id="sec5">
     <div class="mid_content" data-aos="fade-up">
-      <div class="article_title_wrap">
+      <div class="article_title_wrap" ref="titleContainer">
         <div class="article_title">
           {{ infoData.title }}
         </div>
@@ -14,7 +14,7 @@
             :key="index"
             class="btn event_btn" 
             :class="{ active: activeTab === index }"
-            @click="slideTo(index)"
+            @click="handleCityClick(index)"
           >
             <img src="@/assets/image/icon-map.png" alt="地點圖示" class="map-icon">
             <span class="city-name">{{ city.name }}</span>
@@ -33,6 +33,7 @@
             :slides-per-view="1"
             :space-between="20"
             :loop="true"
+            :autoplay="{ delay:8000, disableOnInteraction: false }"
             :speed="1200"
             :effect="'slide'"
             @swiper="onSwiper"
@@ -94,7 +95,7 @@
 <script setup>
 import { ref, computed } from 'vue';
 import { Swiper, SwiperSlide } from 'swiper/vue';
-import { Navigation } from 'swiper/modules';
+import { Autoplay, Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
@@ -105,9 +106,10 @@ const props = defineProps({
   }
 });
 
-const modules = [Navigation];
+const modules = [Autoplay, Navigation];
 const swiperInstance = ref(null);
 const activeTab = ref(0);
+const titleContainer = ref(null);
 
 const cities = ref([
   { name: '台中場', key: 'taichung' },
@@ -142,6 +144,49 @@ const slideTo = (index) => {
   swiperInstance.value?.slideToLoop(index);
 };
 
+const handleCityClick = (index) => {
+  slideTo(index);
+  
+  if (titleContainer.value) {
+    const header = document.querySelector('#HEADER');
+    const headerHeight = header ? header.offsetHeight : 80;
+    
+    const elementTop = titleContainer.value.getBoundingClientRect().top;
+    const targetPosition = elementTop + window.pageYOffset - headerHeight;
+    const startPosition = window.pageYOffset;
+    const distance = targetPosition - startPosition;
+    
+    if (Math.abs(distance) < 10) {
+      window.scrollTo(0, targetPosition);
+      return;
+    }
+    
+    const duration = 1000;
+    let startTime = null;
+
+    function animation(currentTime) {
+      if (startTime === null) startTime = currentTime;
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      
+      const ease = progress < 0.5
+        ? 4 * progress * progress * progress
+        : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+      
+      const currentPosition = startPosition + distance * ease;
+      window.scrollTo(0, currentPosition);
+      
+      if (progress < 1) {
+        requestAnimationFrame(animation);
+      } else {
+        window.scrollTo(0, targetPosition);
+      }
+    }
+
+    requestAnimationFrame(animation);
+  }
+};
+
 const swiperPrev = () => {
   swiperInstance.value?.slidePrev();
 };
@@ -158,6 +203,14 @@ const swiperNext = () => {
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  margin-bottom: 5%;
+}
+
+.event-section .mid_content {
+  width: 100%;
 }
 
 .event_btns {
@@ -213,7 +266,8 @@ const swiperNext = () => {
   display: flex;
   align-items: center;
   gap: 20px;
-  padding: 20px 0;
+  padding: 20px 40px;
+  box-sizing: border-box;
 }
 
 .event-carousel-wrapper {
@@ -259,23 +313,67 @@ const swiperNext = () => {
   width: 100%;
 }
 
+/* 地圖區域 */
+.traffic_body {
+  width: 100%;
+}
+
 .map_wrap {
-  border-radius: 10px !important;
-  overflow: hidden !important;
+  width: 100%;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
   margin-bottom: 30px;
 }
 
 .map-responsive {
-  border-radius: 10px !important;
-  overflow: hidden !important;
+  border-radius: 10px;
+  overflow: hidden;
   position: relative;
   width: 100%;
 }
 
 .map-responsive iframe {
-  border-radius: 10px !important;
-  display: block !important;
+  border-radius: 10px;
+  display: block;
   width: 100%;
+}
+
+/* 交通資訊區域 */
+.traffic_item_wrap {
+  width: 100%;
+  max-width: 715px;
+  text-align: center;
+  box-sizing: border-box;
+  margin-top: 50px;
+}
+
+.traffic_item {
+  display: table;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.traffic_item:last-child {
+  margin-bottom: 0;
+}
+
+.traffic_icon {
+  display: table-cell;
+  width: 30px;
+  vertical-align: top;
+}
+
+.traffic_icon img {
+  width: 100%;
+}
+
+.traffic_des {
+  display: table-cell;
+  vertical-align: top;
+  box-sizing: border-box;
+  padding-left: 15px;
+  text-align: left;
 }
 
 .traffic_title {
@@ -298,6 +396,10 @@ const swiperNext = () => {
   color: #fff;
   font-size: 16px;
   line-height: 1.6;
+}
+
+.traffic_txt span {
+  font-weight: bold;
 }
 
 @media screen and (max-width: 1024px) {
@@ -340,9 +442,18 @@ const swiperNext = () => {
 }
 
 @media screen and (max-width: 768px) {
+  .event-section {
+    min-height: auto;
+    padding: 80px 0;
+  }
+
   .event-carousel-container {
     max-width: 100%;
-    padding: 15px 10px;
+    padding: 15px 20px;
+  }
+
+  .map_wrap {
+    margin-bottom: 10px;
   }
 
   .map-responsive iframe {
@@ -408,38 +519,44 @@ const swiperNext = () => {
 }
 
 @media screen and (max-width: 480px) {
+  .event-section {
+    padding: 60px 0 60px 0;
+  }
+
   .event_btns {
-    gap: 10px;
-    flex-direction: column;
+    gap: 8px;
+    flex-direction: row;
     width: 100%;
-    max-width: 280px;
-    margin-left: auto;
-    margin-right: auto;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
   }
 
   .event_btn {
-    width: 100%;
-    justify-content: center;
-    padding: 10px 16px;
+    padding: 8px 16px;
+    gap: 6px;
   }
 
   .map-icon {
-    width: 24px;
-    height: 24px;
+    width: 18px;
+    height: 18px;
   }
 
   .city-name {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   .event-carousel-container {
     gap: 5px;
+    padding: 15px 10px;
   }
 
   .event-arrow {
     width: 30px;
     height: 30px;
   }
+
+
 
   .map-responsive iframe {
     height: 280px;
@@ -459,6 +576,31 @@ const swiperNext = () => {
   .traffic_txt {
     font-size: 14px;
     line-height: 1.5;
+  }
+}
+
+@media screen and (max-width: 375px) {
+
+  .event_btns {
+    gap: 6px;
+  }
+
+  .event_btn {
+    padding: 7px 14px;
+    gap: 5px;
+  }
+
+  .map-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .city-name {
+    font-size: 13px;
+  }
+
+  .map-responsive iframe {
+    height: 250px;
   }
 }
 </style>

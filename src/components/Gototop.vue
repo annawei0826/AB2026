@@ -55,10 +55,46 @@ onUnmounted(() => {
 <style scoped>
 .goTop {
   position: fixed;
-  right: 38px;
-  bottom: 60px;
-  z-index: 99;
-  cursor: pointer;
+  z-index: 100;
+  width: 30px;
+  height: 30px;
   display: none;
+  transition: opacity 0.3s ease;
+}
+
+.goTop:hover {
+  opacity: 0.8;
+}
+
+.goTop img {
+  width: 130%;
+}
+
+/* 桌面版 (大於 768px) */
+@media (min-width: 769px) {
+  .goTop {
+    bottom: 60px;
+    right: 50px;
+  }
+}
+
+/* 平板版 (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .goTop {
+    bottom: 40px;
+    right: 30px;
+    width: 28px;
+    height: 28px;
+  }
+}
+
+/* 手機版 (最多 480px) */
+@media (max-width: 480px) {
+  .goTop {
+    bottom: 60px;
+    right: 20px;
+    width: 26px;
+    height: 26px;
+  }
 }
 </style>

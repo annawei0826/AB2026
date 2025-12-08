@@ -62,10 +62,10 @@
                     "titleImg": "agenda_remark_taichung.png",
                     "eventInfo": {
                         "date": "2026/01/06",
-                        "time": "(二) 14:00 - 16:25",
+                        "time": "(二) 14:00 - 16:30",
                         "remark": "（13:00開放報到）",
                         "venue": "台中李方艾美酒店",
-                        "room": "22F絢麗廳"
+                        "room": "（22F絢麗廳）"
                     },
                     "schedule": [
                         {
@@ -85,17 +85,17 @@
                         },
                         {
                             "time": "14:15-14:35",
-                            "content": "專題演講一<br>2026全球變局：洞悉新秩序下的機會與挑戰<br><span>知名財金教授 <b style=\"color: #b28922;\">朱岳中</b></span>",
+                            "content": "【專題演講一】<br>2026全球變局：洞悉新秩序下的機會與挑戰<br><span>知名財金教授 <b style=\"color: #b28922;\">朱岳中</b></span>",
                             "isOrange": false
                         },
                         {
                             "time": "14:35-15:05",
-                            "content": "專題演講二<br>當利率轉向，誰能抓住非投等債的風口？<br><span>聯博集團固定收益共同主管暨信用投資總監<br><b style=\"color: #b28922;\">葛尚・狄斯坦費 GERSHON M. DISTENFELD</b></span>",
+                            "content": "【專題演講二】<br>當利率轉向，誰能抓住非投等債的風口？<br><span>聯博集團固定收益共同主管暨信用投資總監<br><b style=\"color: #b28922;\">葛尚・狄斯坦費 GERSHON M. DISTENFELD</b></span>",
                             "isOrange": true
                         },
                         {
                             "time": "15:05-15:25",
-                            "content": "專題演講三<br>主動債勢來襲：揭開非投資等級債ETF的收益新時代<br><span>聯博投信ETF發展部副總經理<b style=\"color: #b28922;\"> 鍾郁婕</b></span>",
+                            "content": "【專題演講三】<br>主動債勢來襲：揭開非投資等級債ETF的收益新時代<br><span>聯博投信ETF發展部副總經理<b style=\"color: #b28922;\"> 鍾郁婕</b></span>",
                             "isOrange": true
                         },
                         {
@@ -105,16 +105,16 @@
                         },
                         {
                             "time": "15:35-15:55",
-                            "content": "專題演講四<br>股債雙盈的秘密：當市場狂熱時，冷靜配置的人贏<br><span>理財達人 <b style=\"color: #b28922;\">股魚</b></span>",
+                            "content": "【專題演講四】<br>股債雙盈的秘密：當市場狂熱時，冷靜配置的人贏<br><span>理財達人 <b style=\"color: #b28922;\">股魚</b></span>",
                             "isOrange": true
                         },
                         {
-                            "time": "15:55-16:25",
-                            "content": "焦點對談<br>贏在轉折：2026投資新常態<br><span>對談主持人暨主講者：<br>知名財經主持人 <b style=\"color: #b28922;\">阮慕驊</b><br>對談專家：<br>聯博投信固定收益資深投資策略師<b style=\"color: #b28922;\"> 江常維</b><br>群益金鼎證券 財富管理部執行副總裁 <b style=\"color: #b28922;\">洪欣如</b><br>理財達人 <b style=\"color: #b28922;\">股魚</b><br>聯博投信ETF發展部副總經理 <b style=\"color: #b28922;\">鍾郁婕</b></span>",
+                            "time": "15:55-16:30",
+                            "content": "【焦點對談】<br>贏在轉折：2026投資新常態<br><span><b>對談主持人暨主講者：</b><br>•知名財經主持人 <b style=\"color: #b28922;\">阮慕驊</b><br><b>對談專家：</b><br>•聯博投信固定收益資深投資策略師<b style=\"color: #b28922;\"> 江常維</b><br>•群益金鼎證券 財富管理部執行副總裁 <b style=\"color: #b28922;\">洪欣如</b><br>•理財達人 <b style=\"color: #b28922;\">股魚</b><br>•聯博投信ETF發展部副總經理 <b style=\"color: #b28922;\">鍾郁婕</b></span>",
                             "isOrange": true
                         },
                         {
-                            "time": "16:25",
+                            "time": "16:30",
                             "content": "圓滿賦歸",
                             "isOrange": false
                         }
@@ -124,10 +124,10 @@
                     "titleImg": "agenda_remark_taipei.png",
                     "eventInfo": {
                         "date": "2026/01/07",
-                        "time": "(三) 19:00 - 21:15",
+                        "time": "(三) 19:00 - 21:20",
                         "remark": "（18:00開放報到）",
                         "venue": "台北國際會議中心TICC",
-                        "room": "201會議室"
+                        "room": "（201會議室）"
                     },
                     "schedule": [
                         {
@@ -147,31 +147,31 @@
                         },
                         {
                             "time": "19:15-19:35",
-                            "content": "專題演講一<br>2026全球變局：洞悉新秩序下的機會與挑戰<br><span>知名財金教授 <b style=\"color: #b28922;\">朱岳中</b></span>",
+                            "content": "【專題演講一】<br>2026全球變局：洞悉新秩序下的機會與挑戰<br><span>知名財金教授 <b style=\"color: #b28922;\">朱岳中</b></span>",
                             "isOrange": false
                         },
                         {
                             "time": "19:35-20:05",
-                            "content": "專題演講二<br>當利率轉向，誰能抓住非投等債的風口？<br><span>聯博集團固定收益共同主管暨信用投資總監<br><b style=\"color: #b28922;\">葛尚・狄斯坦費 GERSHON M. DISTENFELD</b></span>",
+                            "content": "【專題演講二】<br>當利率轉向，誰能抓住非投等債的風口？<br><span>聯博集團固定收益共同主管暨信用投資總監<br><b style=\"color: #b28922;\">葛尚・狄斯坦費 GERSHON M. DISTENFELD</b></span>",
                             "isOrange": true
                         },
                         {
                             "time": "20:05-20:25",
-                            "content": "專題演講三<br>主動債勢來襲：揭開非投資等級債ETF的收益新時代<br><span>聯博投信ETF發展部副總經理 <b style=\"color: #b28922;\"> 鍾郁婕</b></span>",
+                            "content": "【專題演講三】<br>主動債勢來襲：揭開非投資等級債ETF的收益新時代<br><span>聯博投信ETF發展部副總經理 <b style=\"color: #b28922;\"> 鍾郁婕</b></span>",
                             "isOrange": true
                         },
                         {
                             "time": "20:25-20:45",
-                            "content": "專題演講四<br>股債雙盈的秘密：當市場狂熱時，冷靜配置的人贏<br><span>理財達人 <b style=\"color: #b28922;\">股魚</b></span>",
+                            "content": "【專題演講四】<br>股債雙盈的秘密：當市場狂熱時，冷靜配置的人贏<br><span>理財達人 <b style=\"color: #b28922;\">股魚</b></span>",
                             "isOrange": true
                         },
                         {
-                            "time": "20:45-21:15",
-                            "content": "焦點對談<br>贏在轉折：2026投資新常態<br><span>對談主持人暨主講者：<br>知名財經主持人 <b style=\"color: #b28922;\">阮慕驊</b><br>對談專家：<br>聯博投信固定收益資深投資策略師<b style=\"color: #b28922;\"> 江常維</b><br>群益金鼎證券 財富管理部執行副總裁 <b style=\"color: #b28922;\">洪欣如</b><br>理財達人 <b style=\"color: #b28922;\">股魚</b><br>聯博投信ETF發展部副總經理 <b style=\"color: #b28922;\">鍾郁婕</b></span>",
+                            "time": "20:45-21:20",
+                            "content": "【焦點對談】<br>贏在轉折：2026投資新常態<br><span><b>對談主持人暨主講者：</b><br>•知名財經主持人 <b style=\"color: #b28922;\">阮慕驊</b><br><b>對談專家：</b><br>•聯博投信固定收益資深投資策略師<b style=\"color: #b28922;\"> 江常維</b><br>•群益金鼎證券 財富管理部執行副總裁 <b style=\"color: #b28922;\">洪欣如</b><br>•理財達人 <b style=\"color: #b28922;\">股魚</b><br>•聯博投信ETF發展部副總經理 <b style=\"color: #b28922;\">鍾郁婕</b></span>",
                             "isOrange": true
                         },
                         {
-                            "time": "21:15",
+                            "time": "21:20",
                             "content": "圓滿賦歸",
                             "isOrange": false
                         }
@@ -181,10 +181,10 @@
                     "titleImg": "agenda_remark_kaohsiung.png",
                     "eventInfo": {
                         "date": "2026/01/08",
-                        "time": "(二) 14:00 - 16:25",
+                        "time": "(四) 14:00 - 16:30",
                         "remark": "（13:00開放報到）",
                         "venue": "高雄承億酒店萊特薇庭",
-                        "room": "11F 晨星廳"
+                        "room": "（11F 晨星廳）"
                     },
                     "schedule": [
                         {
@@ -204,17 +204,17 @@
                         },
                         {
                             "time": "14:15-14:35",
-                            "content": "專題演講一<br>2026全球變局：洞悉新秩序下的機會與挑戰<br><span>知名財金教授 <b style=\"color: #b28922;\">朱岳中</b></span>",
+                            "content": "【專題演講一】<br>2026全球變局：洞悉新秩序下的機會與挑戰<br><span>知名財金教授 <b style=\"color: #b28922;\">朱岳中</b></span>",
                             "isOrange": false
                         },
                         {
                             "time": "14:35-15:05",
-                            "content": "專題演講二<br>當利率轉向，誰能抓住非投等債的風口？<br><span>聯博集團固定收益共同主管暨信用投資總監<br><b style=\"color: #b28922;\">葛尚・狄斯坦費 GERSHON M. DISTENFELD</b></span>",
+                            "content": "【專題演講二】<br>當利率轉向，誰能抓住非投等債的風口？<br><span>聯博集團固定收益共同主管暨信用投資總監<br><b style=\"color: #b28922;\">葛尚・狄斯坦費 GERSHON M. DISTENFELD</b></span>",
                             "isOrange": true
                         },
                         {
                             "time": "15:05-15:25",
-                            "content": "專題演講三<br>主動債勢來襲：揭開非投資等級債ETF的收益新時代<br><span>聯博投信ETF發展部副總經理<b style=\"color: #b28922;\"> 鍾郁婕</b></span>",
+                            "content": "【專題演講三】<br>主動債勢來襲：揭開非投資等級債ETF的收益新時代<br><span>聯博投信ETF發展部副總經理<b style=\"color: #b28922;\"> 鍾郁婕</b></span>",
                             "isOrange": true
                         },
                         {
@@ -224,16 +224,16 @@
                         },
                         {
                             "time": "15:35-15:55",
-                            "content": "專題演講四<br>股債雙盈的秘密：當市場狂熱時，冷靜配置的人贏<br><span>理財達人 <b style=\"color: #b28922;\">股魚</b></span>",
+                            "content": "【專題演講四】<br>股債雙盈的秘密：當市場狂熱時，冷靜配置的人贏<br><span>理財達人 <b style=\"color: #b28922;\">股魚</b></span>",
                             "isOrange": true
                         },
                         {
-                            "time": "15:55-16:25",
-                            "content": "焦點對談<br>贏在轉折：2026投資新常態<br><span>對談主持人暨主講者：<br>知名財經主持人 <b style=\"color: #b28922;\">阮慕驊</b><br>對談專家：<br>聯博投信固定收益資深投資策略師<b style=\"color: #b28922;\"> 江常維</b><br>群益金鼎證券 財富管理部執行副總裁 <b style=\"color: #b28922;\">洪欣如</b><br>理財達人 <b style=\"color: #b28922;\">股魚</b><br>聯博投信ETF發展部副總經理 <b style=\"color: #b28922;\">鍾郁婕</b></span>",
+                            "time": "15:55-16:30",
+                            "content": "【焦點對談】<br>贏在轉折：2026投資新常態<br><span><b>對談主持人暨主講者：</b><br>•知名財經主持人 <b style=\"color: #b28922;\">阮慕驊</b><br><b>對談專家：</b><br>•聯博投信固定收益資深投資策略師<b style=\"color: #b28922;\"> 江常維</b><br>•群益金鼎證券 財富管理部執行副總裁 <b style=\"color: #b28922;\">洪欣如</b><br>•理財達人 <b style=\"color: #b28922;\">股魚</b><br>•聯博投信ETF發展部副總經理 <b style=\"color: #b28922;\">鍾郁婕</b></span>",
                             "isOrange": true
                         },
                         {
-                            "time": "16:25",
+                            "time": "16:30",
                             "content": "圓滿賦歸",
                             "isOrange": false
                         }
@@ -259,16 +259,16 @@
                         {
                             "type": "時間 : 01/06",
                             "icon": "icon-time.png",
-                            "time": "(二) 14:00 - 16:25"
+                            "time": "(二) 14:00 - 16:30"
                         },
                         {
-                            "type": "高鐵轉乘",
+                            "type": "高鐵轉乘 : ",
                             "icon": "icon-HSR.png",
                             "description": "距離酒店約：8.1公里,開車約15分鐘<br>1. 轉乘火車：抵達台中高鐵站→ 出口 3 台鐵車站→抵達台鐵新烏日站→北上方向(第二月台)→抵達台中火車站→ 5.6 出口 台灣大道(舊站)、建國路→出站後沿建國路步行350公尺(約5分鐘)至左前方的圓弧玻璃帷幕大樓→抵達台中李方艾美酒店<br>2. 轉乘公車：抵達台中高鐵站→ 出口 5.6 客運轉運站→搭乘 158號 或 37號→於台中車站(台灣大道)下車→下車後後沿建國路步行350公尺(約5分鐘)→抵達台中李方艾美酒店"
                         },
                         {
-                            "type": "火車",
-                            "icon": "icon-tram.png",
+                            "type": "火車 : ",
+                            "icon": "icon-train.png",
                             "description": "距離酒店約：0.4公里,步行約5分鐘<br>抵達台中火車站→ 5.6 出口 台灣大道(舊站)、建國路→出站後沿建國路步行350公尺(約5分鐘)至左前方的圓弧玻璃帷幕大樓→抵達台中李方艾美酒店"
                         }
                     ]
@@ -285,20 +285,20 @@
                         {
                             "type": "時間 : 01/07",
                             "icon": "icon-time.png",
-                            "time": "(三) 19:00 - 21:15"
+                            "time": "(三) 19:00 - 21:20"
                         },
                         {
-                            "type": "自行開車",
+                            "type": "自行開車 : ",
                             "icon": "icon-car.png",
                             "description": "國際會議中心地址：台北市信義路五段1號<br>台北車站出發<br>走台北市東西向快速道路/市民大道/市民大道高架道路→前往大安區→光復南路出口下交流道→行駛光復南路→開往信義區基隆路一段→走市府路開往信義路五段→停車"
                         },
                         {
-                            "type": "捷運",
+                            "type": "捷運 : ",
                             "icon": "icon-tram.png",
                             "description": "淡水信義線台北101/世貿站 1號出口,步行約1分鐘即可抵達"
                         },
                         {
-                            "type": "公車",
+                            "type": "公車 : ",
                             "icon": "icon-bus.png",
                             "description": "20、37、284、284直、611、650、935、1032、1503、1551、1552、2025、9001、9009、南軟通勤雙和線、20、22、33、226、承德幹線、288、288區、292、797、1503、信義幹線、28、281、537、647、915、棕6、棕7、棕18、棕21、綠1、207、797、信義幹線、信義新幹線、藍5、藍5區"
                         }
@@ -316,17 +316,22 @@
                         {
                             "type": "時間 : 01/08",
                             "icon": "icon-time.png",
-                            "time": "(四) 14:00 - 16:25"
+                            "time": "(四) 14:00 - 16:30"
                         },
                         {
-                            "type": "自行開車",
+                            "type": "自行開車 : ",
                             "icon": "icon-car.png",
                             "description": "高雄承億酒店萊特薇庭地址：高雄市前鎮區林森四路189號<br>國道一號於高雄端出口下中正交流道 → 直走右轉三多一路(車程約15分鐘) → 左轉中華路 → 右轉林森四路 → 右側即抵達"
                         },
                         {
-                            "type": "大眾運輸 (由台鐵／高鐵／機場轉乘)",
-                            "icon": "icon-bus.png",
-                            "description": "1. 捷運(推薦)：轉乘高雄捷運 →「R8三多商圈站」由②號出口出站 → 沿中山二路步行至林森四路右轉 → 沿林森四路步行400公尺(約10分鐘) → 右側即抵達<br>2. 輕軌：轉乘高雄捷運 →「R13凹子底站」由①號出口出站 → 轉乘高雄輕軌「C24愛河之心站」→「C08高雄展覽館站」出站 → 沿成功二路步行至林森四路左轉 → 沿林森四路步行250公尺(總步行約8分鐘) → 左側即抵達"
+                            "type": "捷運(推薦) : ",
+                            "icon": "icon-tram.png",
+                            "description": "轉乘高雄捷運 →「R8三多商圈站」由②號出口出站 → 沿中山二路步行至林森四路右轉 → 沿林森四路步行400公尺(約10分鐘) → 右側即抵達"
+                        },
+                        {
+                            "type": "輕軌 : ",
+                            "icon": "icon-LRail.png",
+                            "description": "轉乘高雄捷運 →「R13凹子底站」由①號出口出站 → 轉乘高雄輕軌「C24愛河之心站」→「C08高雄展覽館站」出站 → 沿成功二路步行至林森四路左轉 → 沿林森四路步行250公尺(總步行約8分鐘)→ 左側即抵達"
                         }
                     ]
                 }

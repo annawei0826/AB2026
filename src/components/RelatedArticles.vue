@@ -18,7 +18,7 @@
             :slides-per-view="1"
             :space-between="20"
             :loop="true"
-            :autoplay="{ delay: 4000, disableOnInteraction: false }"
+            :autoplay="{ delay: 8000, disableOnInteraction: false }"
             :speed="800"
             :breakpoints="{
               680: { slidesPerView: 2, spaceBetween: 20 },
@@ -86,11 +86,19 @@ const swiperNext = () => {
 
 <style scoped>
 .relatedarticles-section {
-  background-image: url('@/assets/image/bg-blue1.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  padding: 100px 20px 100px 20px;
+    background-image: url('@/assets/image/bg-blue1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 120px 20px 180px 20px;
+    position: relative;
+}
+
+/* 只在桌面版使用 fixed */
+@media screen and (min-width: 1025px) {
+    .relatedarticles-section {
+        background-attachment: fixed;
+    }
 }
 
 .star5 {
@@ -248,6 +256,10 @@ const swiperNext = () => {
 }
 
 @media screen and (max-width: 900px) {
+  .relatedarticles-section {
+    padding: 100px 15px 100px 15px;
+  }
+
   .article-arrow {
     width: 40px;
     height: 40px;
@@ -259,6 +271,10 @@ const swiperNext = () => {
 }
 
 @media screen and (max-width: 680px) {
+  .relatedarticles-section {
+    padding: 80px 15px 80px 15px;
+  }
+
   .article_title {
     font-size: 40px;
   }
@@ -303,6 +319,10 @@ const swiperNext = () => {
 }
 
 @media screen and (max-width: 480px) {
+  .relatedarticles-section {
+    padding: 80px 10px 150px 10px;
+  }
+
   .article-carousel-container {
     gap: 5px;
   }

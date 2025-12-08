@@ -5,8 +5,6 @@
       <div id="status">&nbsp;</div>
     </div> -->
 
-
-
     <div id="fixedBackground">
       <img :src="bgBlue2" alt="background">
     </div>
@@ -78,29 +76,50 @@ const toggleNav = () => {
 const scrollTo = (selector) => {
   const element = document.querySelector(selector);
   if (element) {
-    const targetPosition = element.getBoundingClientRect().top + window.pageYOffset;
+    // 關閉選單
+    isNavOpen.value = false;
+    
+    // 獲取 Header 的高度
+    const header = document.querySelector('#HEADER');
+    const headerHeight = header ? header.offsetHeight : 80;
+    
+    // 計算目標位置，減去 Header 高度
+    const elementTop = element.getBoundingClientRect().top;
+    const targetPosition = elementTop + window.pageYOffset - headerHeight;
     const startPosition = window.pageYOffset;
     const distance = targetPosition - startPosition;
-    const duration = 1500; 
-    let start = null;
+    
+    // 如果距離很小，直接跳轉
+    if (Math.abs(distance) < 10) {
+      window.scrollTo(0, targetPosition);
+      return;
+    }
+    
+    const duration = 1000;
+    let startTime = null;
 
     function animation(currentTime) {
-      if (start === null) start = currentTime;
-      const timeElapsed = currentTime - start;
-      const run = ease(timeElapsed, startPosition, distance, duration);
-      window.scrollTo(0, run);
-      if (timeElapsed < duration) requestAnimationFrame(animation);
-    }
-
-    function ease(t, b, c, d) {
-      t /= d / 2;
-      if (t < 1) return c / 2 * t * t + b;
-      t--;
-      return -c / 2 * (t * (t - 2) - 1) + b;
+      if (startTime === null) startTime = currentTime;
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      
+      // easeInOutQuad - 更柔和的緩動
+      const ease = progress < 0.5 
+        ? 2 * progress * progress 
+        : 1 - Math.pow(-2 * progress + 2, 2) / 2;
+      
+      const currentPosition = startPosition + distance * ease;
+      window.scrollTo(0, currentPosition);
+      
+      if (progress < 1) {
+        requestAnimationFrame(animation);
+      } else {
+        // 確保最後精確到達目標位置
+        window.scrollTo(0, targetPosition);
+      }
     }
 
     requestAnimationFrame(animation);
-    isNavOpen.value = false;
   }
 };
 
@@ -115,9 +134,10 @@ const closeModal = () => {
 
 onMounted(() => {
   AOS.init({
-    offset: 0,
+    offset: 50,
     duration: 1000,
-    once: false
+    once: false,
+    disable: false
   });
 
   window.addEventListener('load', () => {
@@ -196,12 +216,27 @@ section {
 
 <style>
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 body {
   margin: 0;
   padding: 0;
   background: transparent;
+  overflow-x: hidden;
+}
+
+.relative {
+  position: relative;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.overflow-hidden {
+  overflow: hidden;
 }
 </style>

@@ -1,9 +1,7 @@
 <!-- Intro -->
 <template>
     <div class="intro-section-wrapper" id="sec1">
-        <div class="intro-bg-image">
-            <img src="@/assets/image/bg-blue1.jpg" alt="背景圖片">
-        </div>
+<div class="intro-bg-image"></div>
         
         <div class="intro-content-container">
             <div class="intro-inner-content" data-aos="fade-up">
@@ -18,8 +16,9 @@
                 </div>
 
                 <div class="intro-text-block intro-text-block-1">
-                    <p>在全民瘋股、資金狂追指數型ETF的年代，</p>
-                    <p>主動式「非投等債」ETF站上市場聚光燈，成為下一波收益追尋者的焦點武器。</p>
+                    <p>在全民瘋股、資金狂追指數型ETF年代</p>
+                    <p>「主動式非投等債ETF」站上市場聚光燈</p>
+                    <p>成為下一波收益追尋者的焦點武器。</p>
                 </div>
                 
                 <div class="intro-text-block intro-text-block-2">
@@ -27,9 +26,9 @@
                         國際債市權威、頂尖投信團隊與實戰型理財講者
                     </h3>
                     
-                    <p>從全球視角全面剖析，非投等債如何躍升為關鍵收益來源；</p>
-                    <p>聯準會降息下，主動式策略如何穿越震盪、穩定提升收益。</p>
-                    <p>本論壇將帶您搶先卡位下一階段「主動投資」的收益投資風口。</p>
+                    <p>從全球視角全面剖析非投等債如何躍升為關鍵收益來源？</p>
+                    <p>聯準會降息下，主動式策略如何穿越震盪、穩定提升收益？</p>
+                    <p>本論壇將帶您搶先卡位下一階段「主動投資」的收益投資風口！</p>
                 </div>
             </div>
         </div>
@@ -48,6 +47,24 @@ defineProps({
 </script>
 
 <style scoped>
+.intro-bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background: url('@/assets/image/bg-blue1.jpg') center bottom no-repeat;
+    background-size: cover;
+}
+
+/* 只在桌面版使用 fixed */
+@media screen and (min-width: 1025px) {
+    .intro-bg-image {
+        background-attachment: fixed;
+    }
+}
+
 .intro-section-wrapper,
 .intro-section-wrapper * {
     margin: 0;
@@ -61,7 +78,7 @@ defineProps({
     background-color: #0d1a44;
     overflow: hidden;
     padding-top: 200px;
-    padding-bottom: 220px;
+    padding-bottom: 300px;
 }
 
 .intro-bg-image {
@@ -160,10 +177,7 @@ defineProps({
 }
 
 @media screen and (max-width: 1024px) {
-    .intro-section-wrapper {
-        padding-top: 80px;
-        padding-bottom: 80px;
-    }
+
     
     .intro-star {
         width: 130px;
@@ -185,10 +199,7 @@ defineProps({
 }
 
 @media screen and (max-width: 768px) {
-    .intro-section-wrapper {
-        padding-top: 60px;
-        padding-bottom: 60px;
-    }
+
     
     .intro-header {
         margin-bottom: 35px;
@@ -223,8 +234,8 @@ defineProps({
 
 @media screen and (max-width: 480px) {
     .intro-section-wrapper {
-        padding-top: 40px;
-        padding-bottom: 40px;
+    padding-top: 120px;
+    padding-bottom: 260px;
     }
     
     .intro-content-container {

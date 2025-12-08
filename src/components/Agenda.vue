@@ -17,14 +17,14 @@
         </div>
       </div>
 
-      <div class="centerBox">
+      <div class="centerBox" ref="btnContainer">
         <div class="agenda_btns">
           <button 
             v-for="(city, index) in cities" 
             :key="index"
             class="btn agenda_btn" 
             :class="{ active: activeTab === index }"
-            @click="slideTo(index)"
+            @click="handleCityClick(index)"
           >
             <img src="@/assets/image/icon-map.png" alt="地點圖示" class="map-icon">
             <span class="city-name">{{ city.name }}</span>
@@ -47,7 +47,7 @@
             :slides-per-view="1"
             :space-between="20"
             :loop="true"
-            :autoplay="{ delay: 4000, disableOnInteraction: false }"
+            :autoplay="{ delay: 8000, disableOnInteraction: false }"
             :speed="1200"
             :effect="'slide'"
             @swiper="onSwiper"
@@ -59,16 +59,18 @@
                 <div class="agenda_slider_info">
                     <div class="agenda_info_line1">
                       <span class="agenda_info_date">{{ cityEventInfo[index].date }}</span>
-                      <div class="agenda_info_time_group">
-                        <span class="agenda_info_time">{{ cityEventInfo[index].time }}</span>
-                        <span class="agenda_info_remark" v-if="cityEventInfo[index].remark">{{ cityEventInfo[index].remark }}</span>
-                      </div>
+<span class="agenda_info_time">
+  {{ cityEventInfo[index].time }}
+  <span class="agenda_info_remark" v-if="cityEventInfo[index].remark">{{ cityEventInfo[index].remark }}</span>
+</span>
                     </div>
                     
-                    <div class="agenda_info_line2">
-                      <span class="agenda_info_venue">{{ cityEventInfo[index].venue }}</span>
-                      <span class="agenda_info_room">{{ cityEventInfo[index].room }}</span>
-                    </div>
+<div class="agenda_info_line2">
+  <span class="agenda_info_venue">
+    {{ cityEventInfo[index].venue }}
+    <span class="agenda_info_room">{{ cityEventInfo[index].room }}</span>
+  </span>
+</div>
                 </div>
               </div>
               <div class="agenda_content">
@@ -112,6 +114,7 @@ const modules = [Autoplay, Navigation];
 const swiperInstance = ref(null);
 const activeTab = ref(0);
 const localTopics = ref([]);
+const btnContainer = ref(null);
 
 const cities = ref([
   { name: '台中場', key: 'taichung' },
@@ -128,18 +131,7 @@ const cityEventInfo = computed(() => {
         ];
     }
 
-    const rawData = props.infoData.cities.map(c => c.eventInfo);
-
-    const kaohsiungInfo = {
-      ...rawData[2],
-      time: "(二) 18:00 - 21:15"
-    };
-
-    return [
-        rawData[0],
-        rawData[1],
-        kaohsiungInfo
-    ];
+    return props.infoData.cities.map(c => c.eventInfo);
 });
 
 
@@ -165,6 +157,52 @@ const slideTo = (index) => {
   swiperInstance.value?.slideToLoop(index);
 };
 
+const handleCityClick = (index) => {
+  slideTo(index);
+  
+  
+  if (btnContainer.value) {
+    const header = document.querySelector('#HEADER');
+    const headerHeight = header ? header.offsetHeight : 80;
+    
+    const elementTop = btnContainer.value.getBoundingClientRect().top;
+    const targetPosition = elementTop + window.pageYOffset - headerHeight;
+    const startPosition = window.pageYOffset;
+    const distance = targetPosition - startPosition;
+    
+    if (Math.abs(distance) < 10) {
+      window.scrollTo(0, targetPosition);
+      return;
+    }
+    
+ 
+    const duration = 1000; 
+    let startTime = null;
+
+    function animation(currentTime) {
+      if (startTime === null) startTime = currentTime;
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      
+      const ease = progress < 0.5
+        ? 4 * progress * progress * progress
+        : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+      
+      const currentPosition = startPosition + distance * ease;
+      window.scrollTo(0, currentPosition);
+      
+      if (progress < 1) {
+        requestAnimationFrame(animation);
+      } else {
+        
+        window.scrollTo(0, targetPosition);
+      }
+    }
+
+    requestAnimationFrame(animation);
+  }
+};
+
 const swiperPrev = () => {
   swiperInstance.value?.slidePrev();
 };
@@ -181,6 +219,7 @@ const swiperNext = () => {
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  
 }
 
 .agenda-section .mid_content {
@@ -192,7 +231,7 @@ const swiperNext = () => {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 0 20px;
   box-sizing: border-box;
 }
 
@@ -213,7 +252,7 @@ const swiperNext = () => {
   max-width: none;
   min-width: 0;
   min-height: 100%;
-  background: rgba(255, 255, 255, 0.15);
+background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(10px);
   border-radius: 4px;
   overflow: visible;
@@ -285,8 +324,10 @@ const swiperNext = () => {
   justify-content: center;
   align-items: center;
   gap: 20px;
+  margin-top: 10%;
   margin-bottom: 0px;
   flex-wrap: wrap;
+  scroll-margin-top: 80px;
 }
 
 .agenda_btn {
@@ -342,8 +383,10 @@ const swiperNext = () => {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
 }
-
-.agenda-section .agenda_tr .agenda-td {
+ .agenda-td{
+ color:  #7F7F7F;
+ }
+.agenda-section .agenda_tr {
   color: #000;
 }
 
@@ -364,7 +407,8 @@ const swiperNext = () => {
   display: flex;
   align-items: center;
   gap: 20px;
-  padding: 20px 0;
+  padding: 20px 40px;
+  box-sizing: border-box;
 }
 
 .agenda-carousel-wrapper {
@@ -409,6 +453,7 @@ const swiperNext = () => {
   order: 1;
 }
 
+/* 議程資訊區塊 */
 .agenda_slider_info {
     padding: 20px 0;
     text-align: center;
@@ -424,21 +469,19 @@ const swiperNext = () => {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom:20px; 
+    margin-bottom: 20px; 
     gap: 15px;
+    flex-wrap: wrap;
 }
 
-.agenda_info_time_group {
-    display: flex;
-    align-items: center;
-    gap: 0px;
-}
+
 
 .agenda_info_line2 {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 15px;
+    flex-wrap: wrap;
 }
 
 .agenda_info_date {
@@ -446,23 +489,25 @@ const swiperNext = () => {
     font-size: 36px;
     font-weight: 700;
     white-space: nowrap;
-    line-height: 1;
+    line-height: 1.2;
 }
 
 .agenda_info_time {
-    color: #ffffff;
-    font-size: 20px; 
-    font-weight: 400;
-    white-space: nowrap;
-    line-height: 1;
+  color: #ffffff;
+  font-size: 20px; 
+  font-weight: 400;
+  white-space: nowrap;
+  line-height: 1.2;
+  display: inline; 
 }
 
 .agenda_info_remark {
-    color: #ffffff;
-    font-size: 14px;
-    font-weight: 400;
-    white-space: nowrap;
-    line-height: 1;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 400;
+  white-space: nowrap;
+  line-height: 1.2;
+  margin-left: -6px; 
 }
 
 .agenda_info_venue {
@@ -470,7 +515,8 @@ const swiperNext = () => {
     font-size: 24px;
     font-weight: 700;
     white-space: nowrap;
-    line-height: 1;
+    line-height: 1.2;
+    display: inline;
 }
 
 .agenda_info_room {
@@ -478,14 +524,16 @@ const swiperNext = () => {
     font-size: 20px;
     font-weight: 400;
     white-space: nowrap;
-    line-height: 1;
+    line-height: 1.2;
+    margin-left: -6px; 
 }
 
 @media screen and (max-width: 1024px) {
-    .agenda_info_date { font-size: 32px; }
+    .agenda_info_date { font-size: 30px; }
     .agenda_info_venue { font-size: 22px; }
     .agenda_info_time, .agenda_info_room { font-size: 18px; }
     .agenda_info_remark { font-size: 13px; }
+    .agenda_info_time_group { gap: 6px; }
 
     .agenda-cards-wrapper {
         max-width: 900px;
@@ -522,6 +570,14 @@ const swiperNext = () => {
 }
 
 @media screen and (max-width: 900px) {
+    .agenda_info_date { font-size: 26px; }
+    .agenda_info_venue { font-size: 20px; }
+    .agenda_info_time, .agenda_info_room { font-size: 16px; }
+    .agenda_info_remark { font-size: 12px; }
+    .agenda_info_line1, .agenda_info_line2 {
+        gap: 12px;
+    }
+
     .agenda-section .agenda-cards-wrapper .agenda-cards {
         grid-template-columns: 1fr;
         gap: 16px;
@@ -539,6 +595,7 @@ const swiperNext = () => {
     
     .agenda-carousel-container {
         gap: 15px;
+        padding: 20px 30px;
     }
 
     .agenda_btns {
@@ -561,14 +618,22 @@ const swiperNext = () => {
     .current-city-title h3 {
         font-size: 28px;
     }
-
-    .agenda_info_date { font-size: 28px; }
-    .agenda_info_venue { font-size: 20px; }
-    .agenda_info_time, .agenda_info_room { font-size: 16px; }
-    .agenda_info_remark { font-size: 12px; }
 }
 
 @media screen and (max-width: 768px) {
+    .agenda_slider_info {
+        padding: 15px 10px;
+    }
+    
+    .agenda_info_date { font-size: 24px; }
+    .agenda_info_venue { font-size: 18px; }
+    .agenda_info_time, .agenda_info_room { font-size: 15px; }
+    .agenda_info_remark { font-size: 12px; }
+    .agenda_info_line1, .agenda_info_line2 {
+        gap: 10px;
+    }
+    .agenda_info_time_group { gap: 5px; }
+
     .agenda-section .agenda-cards-wrapper {
         max-width: 600px;
         padding: 0 20px;
@@ -604,15 +669,26 @@ const swiperNext = () => {
         font-size: 24px;
     }
 
-    .agenda_info_date { font-size: 24px; }
-    .agenda_info_venue { font-size: 18px; }
-    .agenda_info_time, .agenda_info_room { font-size: 14px; }
-    .agenda_info_line1, .agenda_info_line2 {
-        gap: 10px;
+    .agenda-carousel-container {
+        padding: 15px 20px;
     }
 }
 
 @media screen and (max-width: 680px) {
+    .agenda_info_line1 {
+        flex-direction: column;
+        gap: 8px;
+        margin-bottom: 15px;
+    }
+    
+    .agenda_info_time_group {
+        justify-content: center;
+    }
+    
+    .agenda_info_date { font-size: 22px; }
+    .agenda_info_venue { font-size: 17px; }
+    .agenda_info_time, .agenda_info_room { font-size: 14px; }
+
     .agenda-carousel-container {
         gap: 10px;
     }
@@ -645,6 +721,27 @@ const swiperNext = () => {
 }
 
 @media screen and (max-width: 480px) {
+    .agenda_slider_info {
+        padding: 12px 8px;
+        min-height: 60px;
+    }
+    
+    .agenda_info_line1 {
+        flex-direction: column;
+        gap: 6px;
+        margin-bottom: 12px;
+    }
+    
+    .agenda_info_line2 {
+        flex-direction: column;
+        gap: 6px;
+    }
+    
+    .agenda_info_date { font-size: 20px; }
+    .agenda_info_venue { font-size: 16px; }
+    .agenda_info_time, .agenda_info_room { font-size: 13px; }
+    .agenda_info_remark { font-size: 11px; }
+
     .agenda-section .agenda-cards-wrapper {
         padding: 0 20px;
     }
@@ -675,6 +772,7 @@ const swiperNext = () => {
 
     .agenda-carousel-container {
         gap: 5px;
+        padding: 15px 10px;
     }
 
     .agenda-arrow {
@@ -682,18 +780,27 @@ const swiperNext = () => {
         height: 30px;
     }
 
+    /* 保持水平排列 */
     .agenda_btns {
-        gap: 10px;
-        flex-direction: column;
+        gap: 8px;
+        flex-direction: row;
         width: 100%;
-        max-width: 280px;
-        margin: 0 auto;
+        justify-content: center;
+        flex-wrap: wrap;
     }
 
     .agenda_btn {
-        width: 100%;
-        justify-content: center;
-        padding: 10px 16px;
+        padding: 8px 16px;
+        gap: 6px;
+    }
+
+    .map-icon {
+        width: 18px;
+        height: 18px;
+    }
+
+    .city-name {
+        font-size: 14px;
     }
 
     .current-city-title {
@@ -704,12 +811,31 @@ const swiperNext = () => {
     .current-city-title h3 {
         font-size: 18px;
     }
+}
 
-    .agenda_info_date { font-size: 22px; }
-    .agenda_info_venue { font-size: 16px; }
-    .agenda_info_time, .agenda_info_room { font-size: 13px; }
-    .agenda_info_line1, .agenda_info_line2 {
-        gap: 8px;
+/* 極小螢幕 */
+@media screen and (max-width: 375px) {
+    .agenda_info_date { font-size: 18px; }
+    .agenda_info_venue { font-size: 15px; }
+    .agenda_info_time, .agenda_info_room { font-size: 12px; }
+    .agenda_info_remark { font-size: 10px; }
+
+    .agenda_btns {
+        gap: 6px;
+    }
+
+    .agenda_btn {
+        padding: 7px 14px;
+        gap: 5px;
+    }
+
+    .map-icon {
+        width: 16px;
+        height: 16px;
+    }
+
+    .city-name {
+        font-size: 13px;
     }
 }
 

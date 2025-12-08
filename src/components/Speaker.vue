@@ -19,7 +19,7 @@
             :slides-per-view="1"
             :space-between="20"
             :loop="true"
-            :autoplay="{ delay: 4000, disableOnInteraction: false }"
+            :autoplay="{ delay: 8000, disableOnInteraction: false }"
             :speed="800"
             :breakpoints="{
               600: { slidesPerView: 1, spaceBetween: 20 },
@@ -104,8 +104,11 @@ const getImageUrl = (name) => {
 }
 
 const getScaleRatio = computed(() => {
+  if (windowWidth.value <= 360) return 0.65;
   if (windowWidth.value <= 480) return 0.714; 
+  if (windowWidth.value <= 600) return 0.75;
   if (windowWidth.value <= 680) return 0.8;   
+  if (windowWidth.value <= 768) return 0.85;
   if (windowWidth.value <= 900) return 0.914; 
   return 1; 
 });
@@ -115,9 +118,13 @@ const getPhotoStyle = (speaker) => {
   const bottomValue = parseInt(settings.bottom || '0');
   const scaledBottom = Math.round(bottomValue * getScaleRatio.value);
   
+  const scale = getScaleRatio.value;
+  const baseWidth = parseFloat(settings.width || '100');
+  const baseHeight = parseFloat(settings.height || '100');
+  
   return {
-    width: settings.width || '100%',
-    height: settings.height || '100%',
+    width: `${baseWidth * scale}%`,
+    height: `${baseHeight * scale}%`,
     objectFit: settings.objectFit || 'cover',
     objectPosition: settings.objectPosition || 'center top',
     bottom: `${scaledBottom}px`
@@ -216,6 +223,7 @@ onUnmounted(() => {
   width: 100%;
   max-width: 280px;
   margin: 0 auto;
+  overflow: hidden;
 }
 
 .card-base {
@@ -226,26 +234,29 @@ onUnmounted(() => {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  overflow: hidden;
+  overflow: visible;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .photo-container {
   position: absolute;
   bottom: 120px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: calc(100% - 20px);
+  left: 10px;
+  right: 10px;
   height: 350px;
   display: flex;
   align-items: flex-end;
   justify-content: center;
+  overflow: visible;
   z-index: 1;
 }
 
 .speaker-photo {
   display: block;
   position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: none;
 }
 
 .info-section {
@@ -347,7 +358,8 @@ onUnmounted(() => {
   }
 
   .photo-container {
-    height: 320px;
+    height: 380px;
+    bottom: 110px;
   }
 
   .info-section {
@@ -356,6 +368,15 @@ onUnmounted(() => {
 
   .speaker-name {
     font-size: 22px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .photo-container {
+    bottom: 130px;
+    height: 400px;
+    left: 0;
+    right: 0;
   }
 }
 
@@ -373,9 +394,15 @@ onUnmounted(() => {
     aspect-ratio: 250 / 420;
   }
 
+  .speaker-card-wrapper {
+    max-width: 320px;
+  }
+
   .photo-container {
-    height: 280px;
-    width: calc(100% - 16px);
+    bottom: 130px;
+    height: 480px;
+    left: 0;
+    right: 0;
   }
 
   .info-section {
@@ -413,6 +440,15 @@ onUnmounted(() => {
   }
 }
 
+@media screen and (max-width: 600px) {
+  .photo-container {
+    height: 520px;
+    bottom: 120px;
+    left: 0;
+    right: 0;
+  }
+}
+
 @media screen and (max-width: 480px) {
   .speaker-carousel-container {
     gap: 5px;
@@ -427,9 +463,13 @@ onUnmounted(() => {
     aspect-ratio: 250 / 400;
   }
 
+  .speaker-card-wrapper {
+    max-width: 340px;
+  }
+
   .photo-container {
-    height: 250px;
-    width: calc(100% - 12px);
+    bottom: 140px;
+    height: 520px;
   }
 
   .info-section {
@@ -437,11 +477,12 @@ onUnmounted(() => {
   }
 
   .speaker-name {
-    font-size: 18px;
+    font-size: 24px;
+    margin-bottom: 0;
   }
 
   .speaker-name:has(br) {
-    font-size: 14px;
+    font-size: 18px;
   }
 
   .speaker-title {
@@ -459,5 +500,41 @@ onUnmounted(() => {
     bottom: 6px;
     border-width: 3px;
   }
+}
+
+@media screen and (max-width: 400px) {
+  .photo-container {
+    bottom: 130px;
+    height: 450px;
+    left: 15px;
+    right: 0;
+  }
+
+  .info-section {
+    height: 140px;
+  }
+
+  .speaker-name {
+    font-size: 20px;
+    margin-bottom: 0;
+  }
+
+  .speaker-name:has(br) {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 350px) {
+  .photo-container {
+    bottom: 130px;
+    height: 350px;
+    left: 15px;
+    right: 0;
+  }
+
+  .info-section {
+    height: 140px;
+  }
+
+
 }
 </style>

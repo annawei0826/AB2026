@@ -1,7 +1,7 @@
 <template>
   <img 
     src="@/assets/image/link.png" 
-    class="q_link btn_scroll" 
+    class="scroll_to_form_btn" 
     @click="scrollToSection"
     alt="立即報名"
   >
@@ -16,14 +16,17 @@ const scrollToSection = () => {
   const targetElement = document.querySelector('#sec4');
   
   if (!targetElement) {
-
+    console.error('找不到 #sec4 元素');
     return;
   }
 
-  const headerHeight = document.querySelector('#HEADER')?.offsetHeight || 100;
-  const targetPosition = targetElement.offsetTop;
+  const header = document.querySelector('#HEADER');
+  const headerHeight = header ? header.offsetHeight : 80;
+  
+  const targetRect = targetElement.getBoundingClientRect();
   const startPosition = window.pageYOffset;
-  const distance = targetPosition - startPosition - headerHeight;
+  const targetPosition = targetRect.top + startPosition - headerHeight;
+  const distance = targetPosition - startPosition;
   const duration = 1500;
   let startTime = null;
 
@@ -45,23 +48,30 @@ const scrollToSection = () => {
 </script>
 
 <style scoped>
-.q_link {
+.scroll_to_form_btn {
   position: fixed;
   width: 50px;
-  right: 30px;
-  bottom: 25%;
+  right: 35px;
+  bottom: 30%;
   cursor: pointer;
   z-index: 10;
   transition: opacity 0.3s ease;
 }
 
-.q_link:hover {
+.scroll_to_form_btn:hover {
   opacity: 0.5;
 }
 
-@media screen and (max-width: 480px) {
-  .q_link {
+@media screen and (max-width: 768px) {
+  .scroll_to_form_btn {
     width: 40px;
+    right: 15px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .scroll_to_form_btn {
+    width: 32px;
     right: 10px;
   }
 }

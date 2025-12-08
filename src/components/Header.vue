@@ -6,6 +6,7 @@
         class="logo" 
         :class="{ 'logo-hidden': isNavOpen }"
         alt="Logo"
+        @click="scrollToTop"
       >
       
       <div id="NAV" :class="{ reveal: isNavOpen }">
@@ -56,6 +57,32 @@ const scrollTo = (selector) => {
   emit('scroll-to', selector);
 };
 
+const easeInOutCubic = (t) => {
+  return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
+};
+
+const scrollToTop = () => {
+  const startPosition = window.pageYOffset;
+  const distance = startPosition;
+  const duration = 1500;
+  let startTime = null;
+
+  const animation = (currentTime) => {
+    if (startTime === null) startTime = currentTime;
+    const timeElapsed = currentTime - startTime;
+    const progress = Math.min(timeElapsed / duration, 1);
+    const ease = easeInOutCubic(progress);
+    
+    window.scrollTo(0, startPosition - distance * ease);
+    
+    if (timeElapsed < duration) {
+      requestAnimationFrame(animation);
+    }
+  };
+
+  requestAnimationFrame(animation);
+};
+
 const handleScroll = () => {
   if (window.scrollY > 500) {
     isReveal.value = true;
@@ -74,17 +101,21 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
+/* ==================== HEADER 主要樣式 ==================== */
 #HEADER {
   position: fixed;
   width: 100%;
-  top: 0px;
-  left: 0px;
+  top: 0;
+  left: 0;
   z-index: 10;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background: linear-gradient(90deg, #000000 0%, #142161 50%, #000000 100%);
   transition: background-color 0.3s ease;
+  padding: 0 20px;
+  box-sizing: border-box;
+  min-height: 80px;
 }
 
 #HEADER.reveal {
@@ -92,13 +123,13 @@ onUnmounted(() => {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
 }
 
+/* ==================== LOGO 樣式 ==================== */
 .logo {
   height: 50px;
   width: auto;
-  margin: 15px 60px;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
   position: relative;
   z-index: 13;
+  cursor: pointer;
 }
 
 .logo.logo-hidden {
@@ -106,63 +137,51 @@ onUnmounted(() => {
   visibility: hidden;
 }
 
+/* ==================== 導覽列樣式 ==================== */
 #NAV {
-  position: static;
   display: flex;
   align-items: center;
   height: 100%;
-  box-sizing: border-box;
-  margin-right: 60px;
   background: transparent;
-  background-color: transparent;
-  visibility: visible;
-  opacity: 1;
+  justify-content: flex-end;
 }
 
 nav {
   display: flex;
   align-items: center;
-  height: 100%;
+  justify-content: center;
+  gap: 18px;
 }
 
 nav .scroll_btn {
   display: flex;
   align-items: center;
-  outline: none;
-  cursor: pointer;
-  box-sizing: border-box;
   padding: 0 20px;
-  height: 100%;
+  height: 60px;
   font-size: 20px;
   color: #fff;
+  cursor: pointer;
+  transition: ease-in-out 0.3s;
   white-space: nowrap;
 }
 
 nav .scroll_btn:hover {
-  opacity: 1;
-  transition: ease-in-out 0.3s;
   color: #f2e391;
-  filter: none;
-  -moz-opacity: 1;
 }
 
+/* ==================== 漢堡按鈕樣式 ==================== */
 .NAV_btn_wrap {
   display: none;
-  position: fixed;
-  width: 60px;
-  top: 30px;
-  right: 20px;
-  z-index: 14;
 }
 
 #nav-icon3 {
   width: 30px;
-  height: 45px;
+  height: 30px;
   position: relative;
-  margin: 0px auto;
-  transform: rotate(0deg);
-  transition: .5s ease-in-out;
-  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 #nav-icon3 span {
@@ -170,11 +189,12 @@ nav .scroll_btn:hover {
   position: absolute;
   height: 2px;
   width: 100%;
+  background: #fff;
   border-radius: 2px;
   opacity: 1;
   left: 0;
   transform: rotate(0deg);
-  transition: .25s ease-in-out;
+  transition: 0.25s ease-in-out;
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.56);
 }
 
@@ -186,12 +206,21 @@ nav .scroll_btn:hover {
   background: #000;
 }
 
-#nav-icon3 span:nth-child(1) { top: 0px; }
-#nav-icon3 span:nth-child(2), #nav-icon3 span:nth-child(3) { top: 10px; }
-#nav-icon3 span:nth-child(4) { top: 20px; }
+#nav-icon3 span:nth-child(1) {
+  top: 4px;
+}
+
+#nav-icon3 span:nth-child(2),
+#nav-icon3 span:nth-child(3) {
+  top: 14px;
+}
+
+#nav-icon3 span:nth-child(4) {
+  top: 24px;
+}
 
 #nav-icon3.open span:nth-child(1) {
-  top: 18px;
+  top: 14px;
   width: 0%;
   left: 50%;
 }
@@ -205,27 +234,30 @@ nav .scroll_btn:hover {
 }
 
 #nav-icon3.open span:nth-child(4) {
-  top: 18px;
+  top: 14px;
   width: 0%;
   left: 50%;
 }
 
+/* ==================== 響應式設計 - 1440px ==================== */
 @media screen and (max-width: 1440px) {
   #HEADER {
-    justify-content: space-between;
-    padding: 10px 0;
+    padding: 0 20px;
+    min-height: 60px;
   }
 
   .logo {
     height: 40px;
-    margin-left: 20px;
-    margin-right: 0;
-    margin-top: 10px;
-    margin-bottom: 10px;
   }
 
   .NAV_btn_wrap {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 14;
   }
 
   #NAV {
@@ -233,72 +265,140 @@ nav .scroll_btn:hover {
     z-index: 12;
     width: 100%;
     height: 100%;
-    box-sizing: border-box;
-    text-align: center;
+    left: 0;
+    top: 0;
     background: #FDF4CC;
-    left: 0px;
-    top: 0px;
-    margin-right: 0;
-    display: block;
     visibility: hidden;
     opacity: 0;
     pointer-events: none;
-    transition: none;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease;
+    overflow: hidden;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
-  
+
+  #NAV::-webkit-scrollbar {
+    display: none;
+  }
+
   #NAV.reveal {
+    display: flex;
     visibility: visible;
     opacity: 1;
     pointer-events: auto;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
   }
 
   nav {
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     width: 100%;
-    height: auto;
-    text-align: center;
-    margin-top: 80px;
+    max-width: 500px;
+    min-height: 100%;
+    padding: 0px 0 200px 0;
+    box-sizing: border-box;
   }
 
   nav .scroll_btn {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    padding-left: 20px;
-    padding-right: 20px;
-    line-height: 60px;
-    height: auto;
-    text-align: center;
+    padding: 0 20px;
+    height: 60px;
     font-size: 18px;
     color: #000;
+    text-align: center;
+    flex-shrink: 0;
   }
 }
 
+/* ==================== 響應式設計 - 768px ==================== */
 @media screen and (max-width: 768px) {
+  #HEADER {
+    padding: 0 15px;
+    min-height: 55px;
+  }
+
   .logo {
     height: 35px;
-    margin-left: 15px;
-    margin-top: 8px;
-    margin-bottom: 8px;
   }
   
   .NAV_btn_wrap {
-    top: 20px;
-    right: 15px;
+    width: 35px;
+    height: 35px;
+  }
+
+  #nav-icon3 {
+    width: 28px;
+    height: 28px;
+  }
+
+  #nav-icon3 span:nth-child(1) {
+    top: 3px;
+  }
+
+  #nav-icon3 span:nth-child(2),
+  #nav-icon3 span:nth-child(3) {
+    top: 13px;
+  }
+
+  #nav-icon3 span:nth-child(4) {
+    top: 23px;
+  }
+
+  #nav-icon3.open span:nth-child(1),
+  #nav-icon3.open span:nth-child(4) {
+    top: 13px;
   }
 }
 
+/* ==================== 響應式設計 - 480px ==================== */
 @media screen and (max-width: 480px) {
+  #HEADER {
+    padding: 0 10px;
+    min-height: 50px;
+  }
+
   .logo {
     height: 30px;
-    margin-left: 10px;
-    margin-top: 5px;
-    margin-bottom: 5px;
   }
   
   .NAV_btn_wrap {
-    top: 15px;
-    right: 10px;
+    width: 30px;
+    height: 30px;
+  }
+
+  #nav-icon3 {
+    width: 25px;
+    height: 25px;
+  }
+
+  #nav-icon3 span:nth-child(1) {
+    top: 2px;
+  }
+
+  #nav-icon3 span:nth-child(2),
+  #nav-icon3 span:nth-child(3) {
+    top: 11px;
+  }
+
+  #nav-icon3 span:nth-child(4) {
+    top: 20px;
+  }
+
+  #nav-icon3.open span:nth-child(1),
+  #nav-icon3.open span:nth-child(4) {
+    top: 11px;
+  }
+
+  nav .scroll_btn {
+    font-size: 16px;
+    height: 50px;
   }
 }
 </style>
