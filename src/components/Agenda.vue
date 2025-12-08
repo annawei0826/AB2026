@@ -780,7 +780,6 @@ background: rgba(255, 255, 255, 0.15);
         height: 30px;
     }
 
-    /* 保持水平排列 */
     .agenda_btns {
         gap: 8px;
         flex-direction: row;
@@ -813,7 +812,6 @@ background: rgba(255, 255, 255, 0.15);
     }
 }
 
-/* 極小螢幕 */
 @media screen and (max-width: 375px) {
     .agenda_info_date { font-size: 18px; }
     .agenda_info_venue { font-size: 15px; }

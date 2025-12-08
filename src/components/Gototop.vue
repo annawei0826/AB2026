@@ -70,7 +70,6 @@ onUnmounted(() => {
   width: 130%;
 }
 
-/* 桌面版 (大於 768px) */
 @media (min-width: 769px) {
   .goTop {
     bottom: 60px;
@@ -78,7 +77,6 @@ onUnmounted(() => {
   }
 }
 
-/* 平板版 (481px - 768px) */
 @media (min-width: 481px) and (max-width: 768px) {
   .goTop {
     bottom: 40px;
@@ -88,7 +86,6 @@ onUnmounted(() => {
   }
 }
 
-/* 手機版 (最多 480px) */
 @media (max-width: 480px) {
   .goTop {
     bottom: 60px;

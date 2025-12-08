@@ -58,7 +58,6 @@ defineProps({
     background-size: cover;
 }
 
-/* 只在桌面版使用 fixed */
 @media screen and (min-width: 1025px) {
     .intro-bg-image {
         background-attachment: fixed;

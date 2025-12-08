@@ -101,7 +101,6 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
-/* ==================== HEADER 主要樣式 ==================== */
 #HEADER {
   position: fixed;
   width: 100%;
@@ -123,7 +122,6 @@ onUnmounted(() => {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
 }
 
-/* ==================== LOGO 樣式 ==================== */
 .logo {
   height: 50px;
   width: auto;
@@ -137,7 +135,6 @@ onUnmounted(() => {
   visibility: hidden;
 }
 
-/* ==================== 導覽列樣式 ==================== */
 #NAV {
   display: flex;
   align-items: center;
@@ -169,7 +166,6 @@ nav .scroll_btn:hover {
   color: #f2e391;
 }
 
-/* ==================== 漢堡按鈕樣式 ==================== */
 .NAV_btn_wrap {
   display: none;
 }
@@ -239,7 +235,6 @@ nav .scroll_btn:hover {
   left: 50%;
 }
 
-/* ==================== 響應式設計 - 1440px ==================== */
 @media screen and (max-width: 1440px) {
   #HEADER {
     padding: 0 20px;
@@ -317,7 +312,6 @@ nav .scroll_btn:hover {
   }
 }
 
-/* ==================== 響應式設計 - 768px ==================== */
 @media screen and (max-width: 768px) {
   #HEADER {
     padding: 0 15px;
@@ -357,7 +351,6 @@ nav .scroll_btn:hover {
   }
 }
 
-/* ==================== 響應式設計 - 480px ==================== */
 @media screen and (max-width: 480px) {
   #HEADER {
     padding: 0 10px;

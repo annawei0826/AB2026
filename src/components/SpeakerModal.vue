@@ -104,8 +104,6 @@ const getImageUrl = (name) => {
   opacity: 0.7;
 }
 
-/* 彈窗容器 - 限制高度 */
-/* 彈窗容器 - 限制高度，四邊 padding 一致 */
 .modal_content {
   display: grid;
   grid-template-columns: 240px 1fr;
@@ -119,12 +117,7 @@ const getImageUrl = (name) => {
   padding: 40px;
   box-sizing: border-box;
   overflow: hidden;
-  align-items: center;  /* 改成 center：讓左右兩邊都垂直置中 */
-}
-
-/* 照片區域 - 固定不滾動 */
-.photo_section {
-  display: flex;
+  align-items: center;  
   align-items: center;
   justify-content: center;
 }
@@ -149,7 +142,7 @@ const getImageUrl = (name) => {
 
 /* 資訊區域 - 可滾動 */
 .info_section {
-  max-height: 100%;  /* 改成 max-height，讓它可以自適應內容高度 */
+  max-height: 100%;  
   overflow-y: auto;
   overflow-x: hidden;
   padding-right: 10px;
@@ -178,7 +171,6 @@ const getImageUrl = (name) => {
   text-align: justify;
 }
 
-/* 滾動條樣式 */
 .info_section::-webkit-scrollbar {
   width: 6px;
 }
@@ -197,7 +189,6 @@ const getImageUrl = (name) => {
   background: rgba(127, 86, 14, 0.5);
 }
 
-/* 平板 */
 @media screen and (max-width: 900px) {
   #host_info_box .ct {
     max-width: 750px;
@@ -210,7 +201,6 @@ const getImageUrl = (name) => {
   }
 }
 
-/* 手機橫式/小平板 */
 @media screen and (max-width: 768px) {
   #host_info_box {
     padding: 15px;
@@ -269,7 +259,6 @@ const getImageUrl = (name) => {
   }
 }
 
-/* 手機直式 */
 @media screen and (max-width: 480px) {
   #host_info_box {
     padding: 10px;
@@ -319,7 +308,6 @@ const getImageUrl = (name) => {
   }
 }
 
-/* 極小手機 */
 @media screen and (max-width: 360px) {
   .modal_content {
     padding: 25px 15px;

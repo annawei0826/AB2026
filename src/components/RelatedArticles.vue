@@ -94,7 +94,6 @@ const swiperNext = () => {
     position: relative;
 }
 
-/* 只在桌面版使用 fixed */
 @media screen and (min-width: 1025px) {
     .relatedarticles-section {
         background-attachment: fixed;
