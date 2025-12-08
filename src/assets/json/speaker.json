@@ -1,95 +1,108 @@
 {
     "data": [
+                {
+            "name": "翁振國",
+            "title": "聯博投信董事長",
+            "img": "host0.png",
+  "imgSettings": {
+    "pc":     { "width": 100, "bottom": 30, "scale": 0.9 },
+    "tablet": { "width": 90,  "bottom": 20, "scale": 1 },
+    "mobile": { "width": 80,  "bottom": 40, "scale": 1.1 },
+    "small":  { "width": 75,  "bottom": 30, "scale": 1.2 },
+    "tiny":   { "width": 70,  "bottom": 30, "scale": 1.2 }
+  },
+            "desc": "翁振國自 2010 年起擔任台灣聯博證券投資信託股份有限公司的董事長，負責所有台灣區零售與機構 業務，擁有超過 33 年的金融資歷。他於 1997 年加入聯博在香港的子公司，之後來台設立台灣區業務。如今，聯博已成為台灣市場上規模最大的資產管理公司之一。 在加入聯博之前，他曾在富達投資與美國運通國際工作。 翁振國曾獲中華民國副總統頒發傑出企業領導人金鋒獎。於 2015 年至 2025 年連續獲得亞洲資產管理雜誌頒發年度最佳 CEO 獎項，同時也帶領聯博台灣團隊贏得連續第15年獲得亞洲資產管理雜誌頒發Best of the Best Awards不同獎項肯定。包含台灣最佳境外基金公司、台灣最佳債券管理公司、台灣最佳零售公司等大獎。 翁振國現為中華民國證券投資信託暨顧問商業同業公會(SITCA)理事及中華民國退休基金協會理事 (創始會員)，亦是臺灣美國商會資產管理委員會共同委員長、臺灣集中保管結算所委員。他是香港中文大學企管碩士，並且完成美國哈佛大學高階經理人課程。"
+        },
         {
             "name": "阮慕驊",
             "title": "知名財經主持人",
             "img": "host1.png",
-            "imgSettings": {
-                "width": "100%",
-                "height": "100%",
-                "objectFit": "cover",
-                "objectPosition": "center top",
-                "bottom": "0px"
-            },
+  "imgSettings": {
+    "pc":     { "width": 100, "bottom": -5, "scale": 1 },
+    "tablet": { "width": 90,  "bottom": -30, "scale": 0.9 },
+    "mobile": { "width": 80,  "bottom": -20, "scale": 1 },
+    "small":  { "width": 75,  "bottom": -10, "scale": 1},
+    "tiny":    { "width": 75,  "bottom": -10, "scale": 1}
+  },
             "desc": "阮慕驊以媒體記者十多年的經驗，轉換跑道往媒體主持工作發展。同時鑽研經濟和金融。這三十年來，他發展出一套有系統的人生哲學，使他能把世間的道理看得更清楚，分析得更透徹，從而建立起健康、自在和富裕的境界。"
         },
         {
             "name": "朱岳中",
             "title": "知名財金教授",
             "img": "host4.png",
-            "imgSettings": {
-                "width": "100%",
-                "height": "100%",
-                "objectFit": "cover",
-                "objectPosition": "center top",
-                "bottom": "0px"
-            },
+  "imgSettings": {
+    "pc":     { "width": 100, "bottom": 10, "scale": 0.9 },
+    "tablet": { "width": 90,  "bottom":-30, "scale": 0.9 },
+    "mobile": { "width": 90,  "bottom":-40, "scale": 0.8 },
+    "small":  { "width": 75,  "bottom": -45, "scale": 0.8 },
+    "tiny":   { "width": 75,  "bottom": -30, "scale": 0.8 }
+  },
             "desc": "曾任投信投顧公會、理周文教基金會特聘講師，現為南台科技大學財務金融系助理教授、宏觀財務顧問公司投資顧問、金融研訓院菁英講座講師、勞委會職訓局金融人員訓練班特聘講師、經濟日報、雅虎理財網、鉅亨網、基智網特約專欄作家。"
         },
         {
             "name": "葛尚・狄斯坦費<br>GERSHON M. DISTENFELD",
             "title": "聯博集團<br>固定收益共同主管暨信用投資總監",
             "img": "host3.png",
-            "imgSettings": {
-                "width": "100%",
-                "height": "100%",
-                "objectFit": "cover",
-                "objectPosition": "center top",
-                "bottom": "-10px"
-            },
+  "imgSettings": {
+    "pc":     { "width": 100, "bottom": -20, "scale": 1.1 },
+    "tablet": { "width": 90,  "bottom": -50, "scale": 1 },
+    "mobile": { "width": 90,  "bottom": -80, "scale": 1 },
+    "small":  { "width": 75,  "bottom": -60, "scale": 1.1 },
+    "tiny":  { "width": 75,  "bottom": -50, "scale": 1.1 }
+  },
             "desc": "Gershon Distenfeld為聯博集團資深副總裁，並擔任固定收益共同主管暨信用投資總監以及執行委員會的成員。身為固定收益共同主管，Gershon負責管理集團固定收益事業發展策略；兼任信用投資總監的他，亦須負責監督聯博的信用投資相關策略，包括所有的全球與區域投資等級及非投資等級債策略，及與其相關的策略活動和投資組合管理團隊。基於職責所在，Gershon亦負責帶領聯博內部信貸研究審查委員會，該委員會為集團所有信用相關投資組合的主要投資政策與決策委員會。他亦擔任全球非投資等級債券及美國收益兩檔盧森堡註冊供非美國投資人申購之基金經理。Gershon於 1998年加入聯博，擔任固定收益分析師，在1999年至2002年間擔任非投資等級債交易員，自2002年起擔任非投資等級債投資組合經理。加入聯博之前曾在雷曼兄弟擔任營運分析師，協助新興市場債券投資服務。他擁有耶緒華大學 (Yeshiva University) Sy Syms商學院的財務學士學位，並擁有美國特許財務分析師資格(CFA)。任職地點：納什維爾。"
         },
         {
             "name": "鍾郁婕",
             "title": "聯博投信<br>副總經理",
             "img": "host6.png",
-            "imgSettings": {
-                "width": "105%",
-                "height": "105%",
-                "objectFit": "cover",
-                "objectPosition": "center top",
-                "bottom": "-10px"
-            },
+  "imgSettings": {
+    "pc":     { "width": 100, "bottom": 20, "scale": 1 },
+    "tablet": { "width": 90,  "bottom": 15, "scale": 1 },
+    "mobile": { "width": 80,  "bottom": 40, "scale": 1.2 },
+    "small":  { "width": 75,  "bottom": 30, "scale": 1.3 },
+    "tiny":   { "width": 75,  "bottom": 10, "scale": 1.3 }
+  },
             "desc": "現職於聯博投信 ETF 發展部門，專責主動式 ETF 產品的創新與開發。在加入聯博投信之前，曾任職於國泰投信擔任 ETF 基金經理人，負責 ETF 基金管理與產品發行，管理經驗涵蓋股票、債券及槓反型等多元資產類別，熟悉指數化追蹤方法與模組化交易策略。鍾郁婕具備與全球指數公司深厚的合作經驗，成功完成多檔 ETF 募集與發行。鍾郁婕女士擁有國立政治大學金融所碩士學位，以及清華大學計量財務金融學士學位。"
         },
         {
             "name": "股魚",
             "title": "理財達人",
             "img": "host5.png",
-            "imgSettings": {
-                "width": "100%",
-                "height": "100%",
-                "objectFit": "cover",
-                "objectPosition": "center top",
-                "bottom": "0px"
-            },
+  "imgSettings": {
+    "pc":     { "width": 100, "bottom": 10, "scale": 1 },
+    "tablet": { "width": 90,  "bottom": 15, "scale": 1 },
+    "mobile": { "width": 80,  "bottom": 40, "scale": 1.1 },
+    "small":  { "width": 75,  "bottom": 20, "scale": 1.2 },
+    "tiny":   { "width": 75,  "bottom": 10, "scale": 1.2 }
+  },
             "desc": "畢業於台灣大學機械工程所，曾於科技公司擔任研發主管，《東森理財達人秀：存股敵8個》節目主講人、投資課程講師，著有《躺著就贏人生就是不公平股魚最強存股祕技》、《ETF大贏家》、《不看盤投資術》、《明牌藏在財報裡》等書。"
         },
         {
             "name": "江常維",
             "title": "聯博投信<br>固定收益資深投資策略師",
             "img": "host7.png",
-            "imgSettings": {
-                "width": "100%",
-                "height": "100%",
-                "objectFit": "cover",
-                "objectPosition": "center top",
-                "bottom": "0px"
-            },
+  "imgSettings": {
+    "pc":     { "width": 100, "bottom": 20, "scale": 1 },
+    "tablet": { "width": 90,  "bottom": 25, "scale": 1 },
+    "mobile": { "width": 80,  "bottom": 40, "scale": 1.1 },
+    "small":  { "width": 75,  "bottom": 30, "scale": 1.2 },
+    "tiny":   { "width": 75,  "bottom": 20, "scale": 1.2 }
+  },
             "desc": "江常維女士為聯博投信執行副總經理，並擔任固定收益資深投資策略師一職。常維於2012年加入聯博固定收益事業發展團隊。加入聯博之前，曾擔任UBS瑞銀資產管理及柏瑞投信在台發行註冊多檔境內基金之經理人，在此之前，也在券商擔任衍生性商品交易員，同時負責新商品研發設計，擁有超過17年全球金融市場的經驗。江常維女士擁有台灣大學財務金融碩士學位，以及經濟學學士學位，並擁有美國特許財務分析師資格(CFA)。"
         },
         {
             "name": "洪欣如",
             "title": "群益金鼎證券<br>財富管理部執行副總裁",
             "img": "host8.png",
-            "imgSettings": {
-                "width": "100%",
-                "height": "100%",
-                "objectFit": "cover",
-                "objectPosition": "center top",
-                "bottom": "-10px"
-            },
-            "desc": ""
+  "imgSettings": {
+    "pc":     { "width": 100, "bottom": 35, "scale": 1.2 },
+    "tablet": { "width": 90,  "bottom": 35, "scale": 1.2 },
+    "mobile": { "width": 80,  "bottom": 60, "scale": 1.3 },
+    "small":  { "width": 75,  "bottom": 40, "scale": 1.4 },
+    "tiny":    { "width": 75,  "bottom": 40, "scale": 1.4 }
+  },
+            "desc": "現任：<br>群益證財富管理部執行副總裁<br>榮獲卓越雜誌「2024卓越證券評比」「最佳財富管理獎」<br>經歷：<br>群益期貨資深副總經理<br>元大投信執行副總經理<br>元大證券資深協理"
         }
     ]
 }

@@ -56,17 +56,18 @@ defineProps({
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  gap: 0px;
   margin-bottom: 30px;
   width: 100%;
-  max-width: 500px;
+  max-width: 600px;
 }
 
 .logos .logo {
   display: flex;
   align-items: center;
-  gap: 10px;
-  width: 210px;
+  gap: 40px;
+  width: 260px;
+  white-space: nowrap;
 }
 
 .logos .logo .logo_title {
