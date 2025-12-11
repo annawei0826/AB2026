@@ -97,10 +97,7 @@ const getImageUrl = (name) => {
   return new URL(`../assets/image/${name}`, import.meta.url).href
 }
 
-/* -------------------------------------------------------
-   ⭐ 新增：每個講者可設定不同 breakpoint 的大小與位移
-   settings.pc / settings.tablet / settings.mobile ...
-------------------------------------------------------- */
+
 const getPhotoStyle = (speaker) => {
   let s = speaker.imgSettings || {};
 
@@ -117,7 +114,7 @@ const getPhotoStyle = (speaker) => {
     width: `${bp.width}%`,
     transform: `translateX(-50%) scale(${bp.scale || 1})`,
     bottom: `${bp.bottom || 0}px`,
-    objectFit: "contain", /* ⭐永不裁切 */
+    objectFit: "contain",
     objectPosition: s.objectPosition || "center bottom",
     position: "absolute",
     left: "50%"
@@ -135,9 +132,7 @@ onUnmounted(() => window.removeEventListener("resize", handleResize));
 </script>
 
 <style scoped>
-/* ======================================================
-   ⭐⭐ 你的原始 CSS 完整保留（1px 都沒動） ⭐⭐
-====================================================== */
+
 
 .speaker-section {
   background-image: url('@/assets/image/bg-blue2.jpg');
